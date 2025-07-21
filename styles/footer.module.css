@@ -1,0 +1,279 @@
+.footer {
+  background-color: #122449;
+  color: #d1d5db;
+  padding: 60px 40px 30px;
+  font-family: 'Segoe UI', sans-serif;
+  margin-top: 0px;
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.col {
+  flex: 1 1 300px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0C81AC;
+  margin-bottom: 1rem;
+}
+.logo span {
+  background: #f5f6f9;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.col p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  font-size: 14px;
+}
+.contactList li {
+  margin-bottom: 0.5rem;
+}
+
+.col h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.col ul {
+  list-style: none;
+  padding: 0;
+}
+.col ul li {
+  margin-bottom: 0.6rem;
+}
+.col ul li a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.col ul li a:hover {
+  color: #fff;
+}
+
+/* 👇 NEW TOOLTIP ICON STYLE 👇 */
+.wrapper {
+  display: flex;
+  list-style: none;
+  padding-top: 30px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 13px;
+  background: #fff;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.tooltip::before {
+  position: absolute;
+  content: '';
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+}
+
+.icon:hover .tooltip {
+  top: -36px;
+  left: -11px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Brand Color Hover */
+.facebook:hover,
+.facebook:hover .tooltip,
+.facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+.twitter:hover,
+.twitter:hover .tooltip,
+.twitter:hover .tooltip::before {
+  background: #1da1f2;
+  color: #fff;
+}
+
+.linkedin:hover,
+.linkedin:hover .tooltip,
+.linkedin:hover .tooltip::before {
+  background: #0077b5;
+  color: #fff;
+}
+
+.instagram:hover,
+.instagram:hover .tooltip,
+.instagram:hover .tooltip::before {
+  background: #e4405f;
+  color: #fff;
+}
+
+/* CTA + Bottom */
+.cta {
+  border-top: 1px solid #1e293b;
+  padding-top: 30px;
+  margin-top: 20px;
+  text-align: center;
+}
+.cta h4 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.cta p {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+}
+
+.subscribe {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #1e293b;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.subscribe input {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #e2e8f0;
+}
+
+.subscribe button {
+  margin-right: 8px;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 24px;
+  font-size: 10px;
+  color: rgb(89, 94, 232);
+  border: 2px solid rgb(89, 94, 232);
+  border-radius: 34px;
+  background-color: transparent;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.subscribe button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  border-radius: inherit;
+  scale: 0;
+  z-index: -1;
+  background-color: rgb(89, 94, 232);
+  transition: all 0.6s ease;
+}
+
+.subscribe button:hover::before {
+  scale: 4;
+}
+
+.subscribe button:hover {
+  color: #fff;
+  scale: 1.1;
+  box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
+}
+
+.subscribe button:active {
+  scale: 1;
+}
+
+.bottomBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 13px;
+  border-top: 1px solid #1e293b;
+  padding-top: 20px;
+  margin-top: 30px;
+  color: #94a3b8;
+}
+.links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #94a3b8;
+}
+.links a:hover {
+  color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .footer {
+    margin-top: -250px;
+  }
+  .bottomBar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .links a {
+    margin: 0;
+  }
+
+  .wrapper {
+    justify-content: center;
+  }
+}

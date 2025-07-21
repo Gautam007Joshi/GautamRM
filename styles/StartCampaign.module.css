@@ -1,0 +1,334 @@
+.mainWrap {
+  background: #f5faff;
+  color: #1a1a1a;
+  font-family: Poppins, sans-serif;
+  padding: 1rem;
+}
+
+/* ---------- HERO SECTION ---------- */
+.heroSection {
+  text-align: center;
+  padding: 5rem 1rem 3rem;
+}
+.mainTitle {
+  font-size: 2.5rem;
+}
+@media (max-width: 600px) {
+  .mainTitle {
+    font-size: 2rem;
+  }
+}
+.mainTitle span {
+  color: #007bff;
+}
+.heroSubtitle {
+  color: #555;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* ---------- SERVICES SECTION ---------- */
+.servicesSection {
+  padding: 3rem 1rem;
+}
+.sectionTitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.serviceCard {
+  border: 1px solid #e0e7ef;
+  border-radius: 10px;
+  padding: 1.5rem;
+  background: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  text-align: center;
+}
+.serviceCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.1);
+}
+.activeService {
+  border: 2px solid #007bff;
+  background: #e6f4ff;
+}
+.cardIcon {
+  font-size: 2rem;
+  color: #007bff;
+}
+.serviceCard h4 {
+  margin: 0.8rem 0 0.4rem;
+}
+.serviceCard p {
+  color: #555;
+}
+
+/* ---------- CONTACT SECTION ---------- */
+.contactChoiceAnimated {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+.contactTitle {
+  text-align: center;
+  font-size: 2rem;
+  background: linear-gradient(90deg, #007bff, #00e5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.contactCardWrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.contactCard {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  text-align: center;
+  flex: 1 1 150px;
+  min-width: 150px;
+  max-width: 220px;
+}
+.contactCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+.icon {
+  font-size: 1.8rem;
+  color: #007bff;
+}
+.selected {
+  border: 2px solid #007bff;
+}
+.disabledCard {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* ---------- FORM SECTION ---------- */
+.premiumForm {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.1);
+  max-width: 700px;
+  margin: 2rem auto;
+}
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+.formGroup label {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.phoneWrapper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.phoneWrapper input {
+  flex: 1; /* take remaining space */
+  min-width: 0; /* prevent overflow */
+}
+.countryCode {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+/* BUTTON */
+.glowSubmitBtn {
+  background: linear-gradient(90deg, #007bff, #00e5ff);
+  color: #fff;
+  padding: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
+}
+.glowSubmitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 123, 255, 0.4);
+}
+
+/* ---------- DETAIL SECTION ---------- */
+.detailDive {
+  padding: 3rem 1rem;
+  background: #fff;
+}
+.detailDive h2 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+.detailDive p {
+  max-width: 700px;
+  margin: 0.5rem auto;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+/* ---------- FAQ SECTION ---------- */
+.faqSection {
+  padding: 3rem 1rem;
+  background: #e6f4ff;
+}
+.faqTitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.faqItem {
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+.faqItem summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.faqItem p {
+  margin-top: 0.5rem;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ---------- FOOTER CTA ---------- */
+.footerCTA {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #007bff;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+.footerCTA p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footerCTA button {
+  background: #fff;
+  color: #007bff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.footerCTA button:hover {
+  transform: translateY(-3px);
+}
+
+/* 👇 Add this for smaller screens */
+@media (max-width: 600px) {
+  .footerCTA {
+    margin-bottom: 16rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .footerCTA button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.05rem;
+  }
+
+  .footerCTA p {
+    font-size: 1rem;
+  }
+}
+
+
+/* ---------- HERO BUTTON (start campaign) ---------- */
+.learnMore {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.learnMore:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
+}
+.circle {
+  background: #fff;
+  color: #007bff;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  margin-right: 1rem;
+}
+.iconArrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid #007bff;
+}
+.buttonText {
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .icon {
+    font-size: 1.2rem; /* smaller icons on mobile */
+  }
+
+  .cardIcon {
+    font-size: 1.5rem; /* service icons like FaCode, FaGoogle etc. */
+  }
+
+  .sectionTitle,
+  .contactTitle,
+  .faqTitle {
+    font-size: 1.4rem;
+  }
+
+  .mainTitle {
+    font-size: 2.2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.95rem;
+  }
+}

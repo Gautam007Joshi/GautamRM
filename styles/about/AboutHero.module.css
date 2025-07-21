@@ -1,0 +1,267 @@
+.heroSection {
+  position: relative;
+  padding: 100px 0;
+  background: linear-gradient(135deg, #ffffff, #e0f2ff);
+  overflow: hidden;
+}
+
+/* Blobs */
+.blob1,
+.blob2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+  animation: floatBlob 10s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+.blob1 {
+  width: 450px;
+  height: 450px;
+  background: #3b82f6;
+  top: -100px;
+  left: -100px;
+}
+
+.blob2 {
+  width: 300px;
+  height: 300px;
+  background: #60a5fa;
+  bottom: 0;
+  right: -100px;
+}
+
+@keyframes floatBlob {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column-reverse; /* 👈 IMAGE ON TOP ON MOBILE */
+  gap: 40px;
+  padding: 0 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row; /* 👈 TEXT LEFT, IMAGE RIGHT ON DESKTOP */
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+}
+
+
+/* Image styling */
+.heroImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Text container */
+.left {
+  flex: 1;
+  z-index: 2;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Mobile: Image on top */
+  gap: 40px;
+  padding: 0 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row; /* Desktop: Text left, Image right */
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+  }
+}
+
+.heroImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroImage img {
+  max-width: 480px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  animation: floatImg 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatImg {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.left {
+  flex: 1;
+  z-index: 2;
+}
+
+@media (max-width: 767px) {
+  .left {
+    margin-top: -20px; /* Slightly push text up on mobile */
+  }
+}
+
+
+
+.heroImage img {
+  max-width: 480px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  animation: floatImg 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatImg {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+
+/* Title */
+.title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.3;
+}
+
+.title span {
+  background: linear-gradient(to right, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3.2rem;
+  }
+}
+
+/* Subtext */
+.subtext {
+  font-size: 1rem;
+  color: #374151;
+  margin: 16px 0;
+  max-width: 600px;
+}
+
+/* Points List */
+.points {
+  margin: 16px 0 32px;
+  font-size: 1rem;
+  color: #1f2937;
+  line-height: 1.8;
+  padding-left: 0;
+  list-style: none;
+}
+
+.points li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.primaryBtn,
+.outlineBtn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.primaryBtn {
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.3);
+}
+
+.outlineBtn {
+  background: transparent;
+  color: #3b82f6;
+  border: 2px solid #3b82f6;
+}
+
+.primaryBtn:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px) scale(1.03);
+}
+
+.outlineBtn:hover {
+  background-color: #eff6ff;
+  color: #2563eb;
+  border-color: #2563eb;
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Trusted Logos */
+.trustedBy {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.trustedBy p {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.logos {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logos img {
+  height: 32px;
+  filter: grayscale(100%) brightness(0.8);
+  transition: filter 0.3s;
+}
+
+.logos img:hover {
+  filter: grayscale(0%);
+}
+

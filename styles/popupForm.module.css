@@ -1,0 +1,394 @@
+.popupOverlay {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8); /* âœ… darker background */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.popupOverlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popupOverlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.popupContainer {
+  width: 80%;
+  max-width: 800px;       /* smaller than 800px */
+  max-height: 90vh;        /* Limit height to 90% of viewport */
+  display: flex;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;        /* Scroll if content overflows */
+  margin-top: 5vh;         /* Push slightly down */
+}
+
+
+
+@keyframes popupFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.leftSide {
+  background: #324dbd;
+  color: white;
+  padding: 2rem;
+  flex: 1;
+}
+
+.leftSide h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 2rem;
+
+}
+
+.leftSide p {
+  font-size: 1rem;
+  margin-top: 1.2rem;
+  line-height: 1.5;
+  padding-top: 1.5rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+.icon {
+  font-size: 2.5rem;
+  background: white;
+  color: #324dbd;
+  padding: 0.6rem;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.rightSide {
+  padding: 2rem;
+  flex: 1;
+  position: relative;
+}
+
+.rightSide label {
+  display: block;
+  margin: 1rem 0 0.3rem;
+  font-weight: 500;
+}
+
+.rightSide input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.submitBtn {
+  margin-top: 1.5rem;
+  padding: 0.9rem 2rem;
+  background: #f16624;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.formHeading {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #1b4ae5;
+  font-weight: 600;
+}
+
+.subText {
+  font-size: 0.95rem;
+  color: #8d8b8b;
+  margin-bottom: 1.5rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.socials img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+
+.socials img:hover {
+  transform: scale(1.2);
+}
+
+.highlightBox {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border: 2px solid #5dacd4;
+  background-color: #5dacd4;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+}
+
+
+
+.logo {
+  width: 200px;
+  height: auto;
+  margin-left: 4rem;
+  animation: popIn 0.4s ease-in-out;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.popupHeading {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.projectText {
+  font-size: 1rem;
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .popupContainer {
+  flex-direction: column;
+  width: 90%; /* smaller than desktop */
+  max-width: 400px; /* limit max width */
+  max-height: 90vh;
+  margin-top: 2vh;
+  overflow-y: auto;
+  border-radius: 1rem;
+}
+
+.leftSide,
+.rightSide {
+  width: 100%;
+  padding: 1rem; /* tighter padding */
+}
+
+.projectText{
+  display: none;
+}
+
+.popupHeading {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.highlightBox {
+  font-size: 1.2rem;
+  padding: 0.15rem 0.4rem;
+  border-width: 1.5px;
+}
+
+.formHeading {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.subText {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.rightSide input {
+  padding: 0.6rem;
+  font-size: 0.85rem;
+}
+
+.submitBtn {
+  padding: 0.7rem;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.logo {
+  width: 60px;
+  margin-left: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+.closeBtn {
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.2rem;
+}
+}
+
+@media screen and (max-width: 480px) {
+  .popupHeading {
+    font-size: 1rem;
+  }
+
+  .formHeading {
+    font-size: 1.1rem;
+  }
+
+  .highlightBox {
+    font-size: 0.8rem;
+  }
+
+  .submitBtn {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .popupContainer {
+    flex-direction: column;
+    width: 92%;
+    max-width: 420px;
+    max-height: 90vh;
+    margin-top: 2vh;
+    overflow-y: auto;
+    border-radius: 0.8rem;
+  }
+
+  .leftSide,
+  .rightSide {
+    padding: 0.8rem;
+    width: 100%;
+  }
+
+  .logo {
+    width: 50px;
+    margin: 0 auto;
+  }
+
+  .popupHeading {
+    font-size: 1.8rem !important;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .highlightBox {
+    font-size: 2rem !important;
+    padding: 0.1rem 0.3rem;
+    border-width: 1.2px;
+  }
+
+  /* Remove paragraph */
+  .projectText {
+    display: none;
+  }
+
+  .socials {
+    gap: 0.6rem;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
+  .socials img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .formHeading {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 0.3rem;
+  }
+
+  .subText {
+    display: none;
+  }
+
+  .rightSide label {
+    font-size: 0.85rem;
+    margin: 0.6rem 0 0.2rem;
+  }
+
+  .rightSide input {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+    border-radius: 4px;
+  }
+
+  .submitBtn {
+    font-size: 0.85rem;
+    padding: 0.7rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+  }
+
+  .closeBtn {
+    font-size: 1.2rem;
+    top: 0.4rem;
+    right: 0.4rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .popupContainer {
+    width: 95%;
+    max-width: 360px;
+  }
+
+  .popupHeading,
+  .highlightBox {
+    font-size: 0.95rem;
+  }
+
+  .formHeading {
+    font-size: 1rem;
+  }
+
+  .rightSide input {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  .submitBtn {
+    font-size: 0.8rem;
+    padding: 0.6rem;
+  }
+}

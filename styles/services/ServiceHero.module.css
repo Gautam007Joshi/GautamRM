@@ -1,0 +1,136 @@
+.heroSection {
+  position: relative;
+  background: linear-gradient(to right, #eff6ff, #ffffff);
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.heroContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.heroContentWrapper {
+  position: relative;
+  z-index: 10;
+  padding-bottom: 8rem;
+}
+
+.textBlock {
+  padding-top: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 640px;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1f2937;
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .heading {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 3.75rem;
+  }
+}
+
+.block {
+  display: block;
+}
+
+.gradientText {
+  background: linear-gradient(90deg, #3B82F6, #1D4ED8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.description {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 36rem;
+}
+
+@media (min-width: 640px) {
+  .description {
+    font-size: 1.125rem;
+  }
+}
+
+.buttonGroup {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.primaryBtn {
+  padding: 1rem 2.5rem;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secondaryBtn {
+  padding: 1rem 2.5rem;
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playIcon {
+  margin-right: 0.5rem;
+}
+
+.btnHover {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+}
+
+.btnHover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px rgba(59, 130, 246, 0.3);
+}
+
+.heroImageWrapper {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .heroImageWrapper {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+  }
+
+  .heroImage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

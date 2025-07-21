@@ -1,0 +1,334 @@
+.servicesSection {
+  padding: 5rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+  max-width: 1400px;
+  margin: 0px auto;
+}
+
+.heading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0a0a0a;
+  text-align: center;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+
+
+.highlight {
+  background: linear-gradient(90deg, #0070f3, #00cfff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 60px;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #0070f3, #00cfff);
+  border-radius: 2px;
+}
+
+.subline {
+  font-size: 1.05rem;
+  color: #444;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  overflow: visible; /* ✅ Ensures no clipping by grid parent */
+  position: relative;
+}
+
+
+/* Force 5 cards per row on large screens */
+@media (min-width: 1200px) {
+  .servicesGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.card {
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 112, 243, 0.05);
+  border: 1px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 112, 243, 0.15);
+  border-color: #0070f3;
+  background-color: #ffffff;
+  z-index: 10;
+}
+
+.icon {
+  font-size: 50px;
+  color: #0070f3;
+  margin-bottom: 1.2rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0a0a0a;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.statsGrid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1rem;
+  max-width: 960px;
+  margin: 1rem auto;
+  background: linear-gradient(135deg, #f7f9fc, #e9f0f8);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.statBox {
+  flex: 1 1 160px;
+  min-width: 160px;
+  max-width: 200px;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 112, 243, 0.05);
+  transition: all 0.3s ease;
+}
+
+.statBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0, 112, 243, 0.15);
+}
+
+.statBox h4 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0070f3;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.4px;
+  animation: glow 3s ease-in-out infinite;
+}
+
+.statBox p {
+  font-size: 0.85rem;
+  color: #444;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Glowing Number Animation */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 0 rgba(0, 112, 243, 0);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(0, 112, 243, 0.4);
+  }
+  100% {
+    text-shadow: 0 0 0 rgba(0, 112, 243, 0);
+  }
+}
+
+
+
+.ctaStrip {
+  width: 100%;
+  background: linear-gradient(90deg, #0070f3, #0051b3);
+  color: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px;
+  margin-top: 3rem;
+  margin-bottom: 80px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.3px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 112, 243, 0.3);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* CTA Text */
+.ctaStrip h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* CTA Button */
+.ctaLink {
+  background-color: white;
+  color: #0070f3;
+  padding: 10px 26px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.15);
+}
+
+.ctaLink:hover {
+  background-color: #003c93;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 112, 243, 0.5);
+  transform: translateY(-2px);
+}
+
+/* CTA Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ðŸ“± Mobile-only styles for Services Section */
+@media (max-width: 768px) {
+  .servicesSection {
+    padding: 2rem 1rem;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .highlight::after {
+    top: 42px;
+  }
+
+  .subline {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .servicesGrid {
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .card {
+    padding: 1rem;
+    aspect-ratio: 1 / 1;
+  }
+
+  .card p {
+    display: none;
+  }
+
+  .icon {
+    font-size: 36px;
+    margin-bottom: 0.8rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.8rem;
+  }
+
+  .statsGrid {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .statBox {
+    min-width: 120px;
+    max-width: 160px;
+    padding: 0.6rem;
+  }
+
+  .statBox h4 {
+    font-size: 1.4rem;
+  }
+
+  .statBox p {
+    font-size: 0.75rem;
+  }
+
+  .ctaStrip {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+    margin-bottom: 0px !important; /* ✨ Added line to remove space */
+  }
+
+  .ctaStrip h3 {
+    font-size: 1rem;
+  }
+
+  .ctaLink {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+.cardWrapper {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: visible; /* ✅ This prevents clipping */
+  z-index: 1;
+}
+
+
+
+
+@media (max-width: 768px) {
+  #services {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}

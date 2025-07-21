@@ -1,0 +1,463 @@
+.section {
+  position: relative;
+  background-color: white;
+  padding: 100px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.titleBlock {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.heading {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.gradientText {
+  background: linear-gradient(to right, #2563eb, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtext {
+  font-size: 18px;
+  color: #4b5563;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.stepsContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.verticalLine {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #60a5fa, #3b82f6);
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.stepRow {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.normal {
+  flex-direction: row;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.stepContent {
+  width: 50%;
+}
+
+.spacer {
+  width: 50%;
+}
+
+.card {
+  padding: 30px;
+  background-color: white;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  transform: scale(1);
+  
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(96, 165, 250, 0.25);
+}
+
+.cardActive {
+  background-color: #f0f9ff;
+  border-color: #3b82f6;
+  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.2);
+  transform: scale(1.03);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease;
+}
+
+.cardActive .cardTop .iconBox {
+  transform: rotate(15deg) scale(1.1);
+}
+
+.detail {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px dashed #cbd5e1;
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.6;
+  animation: expand 0.4s ease-out;
+  overflow: hidden;
+}
+
+.expandIcon {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chevron {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+  color: #3b82f6;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+
+
+@keyframes expand {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: scaleY(0.95);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: scaleY(1);
+  }
+}
+
+/* Slightly bigger icon with subtle bounce */
+.iconBox {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
+}
+
+.phase {
+  font-size: 32px;
+  font-weight: bold;
+  background: linear-gradient(to right, #2563eb, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.iconBox {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  color: #2563eb;
+  width: 24px;
+  height: 24px;
+}
+
+.stepTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.stepDescription {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.iconCircleContainer {
+  position: relative;
+  z-index: 1;
+}
+
+.iconCircle {
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+  background: #bfdbfe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconLarge {
+  width: 32px;
+  height: 32px;
+  color: #2563eb;
+}
+
+.cta {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.ctaButton {
+  background: linear-gradient(to right, #2563eb, #3b82f6);
+  color: white;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.iconCircleContainer {
+  position: relative;
+  z-index: 1;
+}
+
+.pingWrapper {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.iconCircle {
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+  background: #bfdbfe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+  position: relative;
+  z-index: 1;
+}
+
+.iconLarge {
+  width: 32px;
+  height: 32px;
+  color: #2563eb;
+}
+
+.ping {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+  background-color: #bfdbfe;
+  animation: ping 2s infinite;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+/* Animations */
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 60px 16px;
+  }
+
+  .heading {
+    font-size: 28px;
+  }
+
+  .subtext {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .stepsContainer {
+    gap: 40px;
+  }
+
+  .verticalLine {
+    display: none; /* Hide the central line on small screens */
+  }
+
+  .stepRow {
+    flex-direction: column !important;
+    gap: 20px;
+  }
+
+  .stepContent,
+  .spacer,
+  .iconCircleContainer {
+    width: 100%;
+    text-align: center;
+  }
+
+  .card {
+    padding: 20px;
+    text-align: left;
+  }
+
+  .cardTop {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .phase {
+    font-size: 24px;
+  }
+
+  .iconBox {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .stepTitle {
+    font-size: 18px;
+  }
+
+  .stepDescription {
+    font-size: 14px;
+  }
+
+  .detail {
+    font-size: 14px;
+  }
+
+  .iconCircle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .ping,
+  .pingWrapper {
+    width: 48px;
+    height: 48px;
+  }
+
+  .iconLarge {
+    width: 24px;
+    height: 24px;
+  }
+
+  .cta {
+    margin-top: 40px;
+  }
+
+  .ctaButton {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heading {
+    font-size: 24px;
+  }
+
+  .subtext {
+    font-size: 15px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .stepTitle {
+    font-size: 16px;
+  }
+
+  .stepDescription,
+  .detail {
+    font-size: 13px;
+  }
+
+  .phase {
+    font-size: 20px;
+  }
+
+  .ctaButton {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .iconCircle {
+    position: relative;
+    overflow: visible;
+  }
+
+  .iconCircle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-left: 10px;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(to right, #60a5fa, #2563eb); /* Tailwind Blue */
+    border-radius: 1px;
+    animation: growLine 1s ease forwards;
+  }
+
+  @keyframes growLine {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+    to {
+      width: 280px;
+      opacity: 1;
+    }
+  }
+}
+

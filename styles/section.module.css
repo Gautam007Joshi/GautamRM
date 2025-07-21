@@ -1,0 +1,102 @@
+.sectionWrap {
+  position: relative;
+  height: 150vh;
+  margin-top: -30vh;
+  padding-top: 30vh;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.footer-section.sectionWrap {
+  height: auto !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  pointer-events: auto !important;
+}
+
+.sectionCard {
+  height: auto;
+  width: 100%;
+  border-radius: 3rem 3rem 0 0;
+  box-shadow: 0 -30px 60px rgba(0, 0, 0, 0.05);
+  padding: 3rem;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #111;
+  position: relative;
+  z-index: 3;
+  will-change: transform, opacity;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  pointer-events: auto;
+  display: block; /* ⬅️ Change from flex to block */
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .sectionCard {
+  background-color: #0e0e0e;
+  color: #ffffff;
+}
+
+/* Optional: Stronger overlay effect on dark */
+body.dark-mode .sectionCard::before {
+  background: rgba(0, 0, 0, var(--overlay-opacity, 0.3));
+}
+
+/* Optional: Soft overlay for light mode */
+.sectionCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: rgba(0, 0, 0, var(--overlay-opacity, 0.05));
+  transition: background 0.3s ease;
+}
+
+.sectionCard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+  );
+  backdrop-filter: blur(2px); /* Optional for glow */
+  opacity: var(--overlay-opacity, 0);
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+.darkSection {
+  background-color: #000 !important;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .sectionWrap {
+    height: auto !important; /* overrides the fixed height */
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .sectionCard {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    border-radius: 2rem 2rem 0 0;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .sectionCard h1 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.noOverlay::after {
+  display: none !important;
+}

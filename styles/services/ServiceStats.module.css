@@ -1,0 +1,94 @@
+.statsSection {
+  background-color: #ffffff;
+  padding: 3rem 1rem;
+}
+
+.heading {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heading h2 {
+  color: #3B82F6;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.heading p {
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+.grid {
+  display: grid;
+  margin-top: 2.5rem;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card {
+  background-color: #f5faff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: default;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.05);
+}
+
+.card:hover {
+  background-color: #eaf4ff;
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(59, 130, 246, 0.15);
+}
+
+.iconWrapper {
+  background-color: #3B82F6;
+  color: white;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 1rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+/* 📱 Responsive Text Sizes */
+@media (max-width: 768px) {
+  .heading p {
+    font-size: 1.5rem;
+  }
+
+  .value {
+    font-size: 1.5rem;
+  }
+
+  .label {
+    font-size: 0.8rem;
+  }
+
+  .iconWrapper {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
