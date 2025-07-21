@@ -1,6 +1,6 @@
 import Navbar from '@/components/sections/Navbar';
 import { getAllPosts, getPostData } from '@/lib/server/blog';
-import styles from '@/styles/blog/blogPage.module.css';
+import styles from '@/styles/blog/blogSingle.module.css';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
