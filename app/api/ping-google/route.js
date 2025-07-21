@@ -1,4 +1,3 @@
-// app/api/ping-google/route.js
 import { NextResponse } from 'next/server';
 import { pingGoogle } from '@/lib/pingGoogle';
 

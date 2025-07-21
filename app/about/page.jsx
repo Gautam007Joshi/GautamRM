@@ -19,30 +19,28 @@ const SplashScreen = dynamic(() => import('@/components/splash/SplashScreen'), {
   ssr: false, // 👈 DISABLE SERVER-SIDE RENDERING
 });
 
+// About.tsx
 const About = () => {
   const [showSplash, setShowSplash] = useState(true);
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
-    // Prevent hydration mismatch by waiting until mount
     setHasMounted(true);
-
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-      document.body.style.overflow = 'auto';
-    }, 3000); // Example splash duration
-
-    document.body.style.overflow = 'hidden';
-
-    return () => clearTimeout(timer);
+    document.body.style.overflow = 'hidden';          // still lock body
+    return () => {
+      document.body.style.overflow = 'auto';          // unlock on unmount
+    };
   }, []);
 
-  if (!hasMounted) return null; // ✅ Avoid hydration error
+  if (!hasMounted) return null;
 
   return (
     <>
       {showSplash && (
-        <SplashScreen text="About Rankers Mind" onComplete={() => setShowSplash(false)} />
+        <SplashScreen
+          text="About Rankers Mind"
+          onComplete={() => setShowSplash(false)}       // <- only this controls hiding
+        />
       )}
 
       <div
