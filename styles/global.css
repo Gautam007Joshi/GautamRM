@@ -1,3 +1,37 @@
+:root {
+    --white: #ffffff;
+  --black: #000;
+  --ice: #f8fcff;
+  --blue-50: #e6f4ff;
+  --blue-200: #b3dfff;
+  --blue-400: #66c2ff;
+  --blue-600: #0077e6;
+  --blue-700: #005bb5;
+  --dark-glass: rgba(10, 25, 40, 0.15);
+  --dark-border: rgba(255, 255, 255, 0.08);
+  --dark-input: rgba(255, 255, 255, 0.07);
+  --dark-input-focus: rgba(255, 255, 255, 0.15);
+  --radius: 24px;
+  --transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --surface-light: #f2f4f7;
+  --border: #e6e9ef;
+  --accent: #0052d9;
+  --accent-dark: #003bb3;
+  --text: #1a1d29;
+  --text-muted: #6b7280;
+  --radius: 16px;
+  --inner-radius: 12px;
+  --gap: 0.75rem;
+  --transition: 0.25s cubic-bezier(.4, 0, .2, 1);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, .08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, .12);
+  --font: 'Inter', system-ui, sans-serif;
+}
+
+
 html {
   box-sizing: border-box;
   
