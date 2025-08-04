@@ -1,6 +1,6 @@
 .missionSection {
   padding: 100px 0;
-  background: linear-gradient(to right, #ffffff, #f0f9ff);
+  background: linear-gradient(to right, #ffffff, #d8f2f9); /* Light variant of #0e82ac */
 }
 
 .container {
@@ -17,7 +17,7 @@
 .gradientTitle {
   font-size: 40px;
   font-weight: 900;
-  background: linear-gradient(to right, #1d4ed8, #3b82f6, #60a5fa);
+  background: linear-gradient(to right, #0e82ac, #3fb7d3, #6fd8ef); /* Gradient with #0e82ac base */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -29,7 +29,7 @@
   display: block;
   width: 60px;
   height: 4px;
-  background-color: #3b82f6;
+  background-color: #0e82ac;
   margin: 12px auto 0;
   border-radius: 4px;
 }
@@ -58,7 +58,7 @@
 .textWrapper h3 {
   font-size: 26px;
   font-weight: 700;
-  color: #1e40af;
+  color: #0e82ac;
   margin-bottom: 20px;
 }
 
@@ -91,23 +91,23 @@
 }
 
 .point i {
-  background-color: #dbeafe;
-  color: #3b82f6;
+  background-color: #d4f0f7;
+  color: #0e82ac;
   padding: 12px;
   border-radius: 50%;
   font-size: 18px;
-  box-shadow: 0 6px 14px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 6px 14px rgba(14, 130, 172, 0.2);
 }
 
-/* 👇 Gorgeous Button Animation */
+/* 👇 Glass Button with Updated Palette */
 .glassBtn {
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(14, 130, 172, 0.1);
   backdrop-filter: blur(8px);
   padding: 14px 32px;
-  border: 2px solid #3b82f6;
+  border: 2px solid #0e82ac;
   border-radius: 12px;
   font-weight: bold;
-  color: #1e40af;
+  color: #0e82ac;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -127,7 +127,7 @@
   left: -75%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(120deg, #60a5fa, #3b82f6, #60a5fa);
+  background: linear-gradient(120deg, #6fd8ef, #0e82ac, #3fb7d3);
   transform: translateY(-50%) rotate(25deg);
   transition: all 0.6s ease-in-out;
   z-index: 1;
@@ -141,8 +141,8 @@
 
 .glassBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(59, 130, 246, 0.3);
-  color: #1e3a8a;
+  box-shadow: 0 10px 24px rgba(14, 130, 172, 0.3);
+  color: #0b6b8f;
 }
 
 /* Responsive */

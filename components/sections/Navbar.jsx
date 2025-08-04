@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from '@/styles/navbar.module.css';
 import { Send } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 
 import {
@@ -49,6 +50,7 @@ export default function Navbar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [showContactForm, setShowContactForm] = useState(false);
+  const pathname = usePathname();
 
   const router = useRouter();
 
@@ -107,50 +109,54 @@ export default function Navbar() {
 
   <div className={styles.navWrapper}>
     <nav className={styles.menu}>
-      {menuItems.map((item, index) => (
-        <div
-          key={item.label}
-          className={`${styles.link} ${activeIndex === index ? styles.expanded : ''}`}
-          onClick={(e) => {
-            e.stopPropagation();
-            if (item.path !== '#') {
-              router.push(item.path);
-            } else {
-              setActiveIndex(index === activeIndex ? null : index);
-            }
-          }}
-        >
-          <span className={styles.linkIcon}>{item.icon}</span>
-          <span className={styles.linkTitle}>{item.label}</span>
+      {menuItems.map((item, index) => {
+  const isActive = item.path !== '#' && pathname === item.path;
 
-          {/* Mega Dropdown */}
-          {item.megaMenu && (
-            <div className={styles.megaDropdown}>
-              <div className={styles.megaDropdownWrapper}>
-                {Object.entries(item.megaMenu).map(([title, links]) => (
-                  <div className={styles.megaColumn} key={title}>
-                    <h4 className={styles.megaTitle}>{title}</h4>
-                    {links.map((link) => (
-                      <div
-                        key={link.label}
-                        className={styles.dropdownItem}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          router.push(link.path);
-                          setActiveIndex(null);
-                        }}
-                      >
-                        {link.icon && <span>{link.icon}</span>}
-                        {link.label}
-                      </div>
-                    ))}
+  return (
+    <div
+      key={item.label}
+      className={`${styles.link} ${isActive ? styles.active : ''}`}
+      onClick={(e) => {
+        e.stopPropagation();
+        if (item.path !== '#') {
+          router.push(item.path);
+        } else {
+          setActiveIndex(index === activeIndex ? null : index);
+        }
+      }}
+    >
+      <span className={styles.linkIcon}>{item.icon}</span>
+      <span className={styles.linkTitle}>{item.label}</span>
+
+      {/* Mega Dropdown */}
+      {item.megaMenu && (
+        <div className={styles.megaDropdown}>
+          <div className={styles.megaDropdownWrapper}>
+            {Object.entries(item.megaMenu).map(([title, links]) => (
+              <div className={styles.megaColumn} key={title}>
+                <h4 className={styles.megaTitle}>{title}</h4>
+                {links.map((link) => (
+                  <div
+                    key={link.label}
+                    className={styles.dropdownItem}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      router.push(link.path);
+                      setActiveIndex(null);
+                    }}
+                  >
+                    {link.icon && <span>{link.icon}</span>}
+                    {link.label}
                   </div>
                 ))}
               </div>
-            </div>
-          )}
+            ))}
+          </div>
         </div>
-      ))}
+      )}
+    </div>
+  );
+})}
     </nav>
     <div className={`${styles.letsTalkButton} ${styles.desktopOnly}`} onClick={() => setShowContactForm(true)}>
   <Send size={20} strokeWidth={2.2} />

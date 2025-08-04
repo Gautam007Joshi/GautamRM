@@ -371,7 +371,7 @@
   margin-top: 13px;
   font-size: 1rem;
   padding: 16px 36px;
-  background: linear-gradient(135deg, #5991eb, #0247b7);
+  background: linear-gradient(135deg, #20ade0, #1688b1);
   color: #ffffff;
   font-weight: 600;
   border: none;
@@ -391,7 +391,7 @@
 .letsTalkButton:hover {
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 14px 30px rgba(66, 133, 244, 0.45);
-  background: linear-gradient(135deg, #0247b7, #5991eb);
+  background: linear-gradient(135deg, #1688b1, #20ade0);
 }
 
 
@@ -760,4 +760,31 @@
     display: none;
   }
 } 
+
+/* Active link – professional dark highlight with text slightly left */
+@media (min-width: 601px) {
+  .link.active {
+    width: 150px !important;
+    padding: 0 26px;     /* deep navy */
+    color: #ffffff;                 /* white icon + text */
+    box-shadow: 0 0 0 1px #0f0f10;  /* thin accent border */
+  }
+
+  .link.active .linkIcon,
+  .link.active .linkTitle {
+    opacity: 1 !important;
+    transform: none !important;
+    color: #0c0b0d;
+  }
+
+  .link.active .linkTitle {
+    margin-left: 4px;               /* slight left adjustment */
+  }
+
+  /* optional soft glow on hover (still dark) */
+  .link.active:hover {
+    background-color: #dddbdb;      /* slightly lighter navy */
+    box-shadow: 0 0 0 1px #4a90ff, 0 4px 12px rgba(41, 124, 240, 0.25);
+  }
+}
 

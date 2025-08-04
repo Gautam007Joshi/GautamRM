@@ -20,7 +20,7 @@
 }
 
 .highlight {
-  color: #2563eb;
+  color: #0e82ac;
 }
 
 .subtext {
@@ -86,7 +86,7 @@
 }
 
 .switch input:checked + .slider {
-  background-color: #2563eb;
+  background-color: #0e82ac;
 }
 
 .switch input:checked + .slider:before {
@@ -94,7 +94,7 @@
 }
 
 .saveText {
-  color: #2563eb;
+  color: #0e82ac;
   font-weight: 500;
   font-size: 0.95rem;
 }
@@ -107,7 +107,7 @@
 
 .card {
   background-color: white;
-  border: 1px solid #dbeafe;
+  border: 1px solid #bde9f5; /* lighter shade of #0e82ac */
   border-radius: 1rem;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
   overflow: hidden;
@@ -142,7 +142,7 @@
 .priceValue {
   font-size: 2rem;
   font-weight: 700;
-  color: #2563eb;
+  color: #0e82ac;
 }
 
 .unit {
@@ -153,7 +153,7 @@
 .ctaButton {
   display: block;
   width: 100%;
-  background-color: #2563eb;
+  background-color: #0e82ac;
   color: white;
   padding: 12px 0;
   text-align: center;
@@ -164,12 +164,12 @@
 }
 
 .ctaButton:hover {
-  background-color: #1d4ed8;
+  background-color: #0b6b8e;
 }
 
 .featuresSection {
-  border-top: 1px solid #e0f2fe;
-  background-color: #eff6ff;
+  border-top: 1px solid #bde9f5;
+  background-color: #eaf7fb;
   padding: 2rem;
 }
 
@@ -181,7 +181,7 @@
 }
 
 .icon {
-  color: #2563eb;
+  color: #0e82ac;
   margin-right: 10px;
 }
 
@@ -201,8 +201,8 @@
 
 .customBtn {
   display: inline-block;
-  border: 2px solid #2563eb;
-  color: #2563eb;
+  border: 2px solid #0e82ac;
+  color: #0e82ac;
   padding: 0.75rem 2rem;
   border-radius: 8px;
   font-weight: 600;
@@ -211,5 +211,5 @@
 }
 
 .customBtn:hover {
-  background-color: #e0f2fe;
+  background-color: #eaf7fb;
 }

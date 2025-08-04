@@ -16,7 +16,7 @@
 .sectionTitle {
   font-size: 3rem;
   font-weight: 700;
-  color: #0070f3;
+  color: #0e82ac;
   margin-top: -4rem;
 }
 
@@ -40,11 +40,11 @@
 }
 
 /* 🧭 Arrow Buttons */
+/* 🧭 Arrow Buttons */
 .arrowBtn {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 112, 243, 0.9);
+  background-color: #0e82ac;
   color: white;
   border: none;
   font-size: 1.2rem;
@@ -57,17 +57,16 @@
 }
 
 .arrowBtn:hover {
-  background-color: #0051a8;
+  background-color: #10475b
 }
 
 .arrowBtn.left {
-  left: 15px;
+  left: 0;
 }
 
 .arrowBtn.right {
-  right: 15px;
+  right: 0;
 }
-
 /* 🧱 Blog Scroll Area */
 .blogScrollContainer {
   overflow: hidden;
@@ -81,7 +80,7 @@
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   gap: 2rem;
-  padding: 0 2rem;
+  padding: 2rem 2rem;
   scrollbar-width: none;
 }
 
@@ -108,12 +107,11 @@
   }
 
   .readMore:hover {
-    color: #0051a8;
+    color: #09516b;
   }
 
   .arrowBtn:hover {
     background-color: #0051a8;
-    transform: scale(1.05);
   }
 }
 
@@ -127,6 +125,10 @@
 .blogContent {
   padding: 2rem;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* This will push the readMore to the bottom */
+  height: 100%; /* Ensure the container takes full height */
 }
 
 .blogContent h3 {
@@ -143,12 +145,14 @@
 }
 
 .readMore {
-  color: #0070f3;
+  color: #0e82ac;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
   transition: color 0.2s ease;
+  margin-top: auto; /* Push the readMore to the bottom */
 }
+
 
 .readMore:hover {
   color: #0051a8;
@@ -249,4 +253,34 @@
   .blogsThemeSection {
   margin-top: -100px;
 }
+}
+
+/* Explore Button Wrapper */
+.exploreButtonWrapper {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* Explore Button */
+.exploreButton {
+  display: inline-block;
+  background-color: #0e82ac;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.exploreButton:hover {
+  background-color: #09506a;
+  transform: translateY(-5px);
+}
+
+.exploreButton:active {
+  transform: translateY(0);
 }

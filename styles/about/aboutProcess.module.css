@@ -22,7 +22,7 @@
 }
 
 .gradientText {
-  background: linear-gradient(to right, #2563eb, #60a5fa);
+  background: linear-gradient(to right, #0e82ac, #61b4cf);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -47,7 +47,7 @@
   transform: translateX(-50%);
   width: 4px;
   height: 100%;
-  background: linear-gradient(to bottom, #60a5fa, #3b82f6);
+  background: linear-gradient(to bottom, #61b4cf, #0e82ac);
   opacity: 0.2;
   z-index: 0;
 }
@@ -79,23 +79,22 @@
 .card {
   padding: 30px;
   background-color: white;
-  border: 1px solid #dbeafe;
+  border: 1px solid #d1ecf4;
   border-radius: 16px;
   cursor: pointer;
   transition: all 0.4s ease;
   transform: scale(1);
-  
 }
 
 .card:hover {
   transform: scale(1.02);
-  box-shadow: 0 6px 18px rgba(96, 165, 250, 0.25);
+  box-shadow: 0 6px 18px rgba(14, 130, 172, 0.25);
 }
 
 .cardActive {
-  background-color: #f0f9ff;
-  border-color: #3b82f6;
-  box-shadow: 0 6px 24px rgba(59, 130, 246, 0.2);
+  background-color: #e5f8fd;
+  border-color: #0e82ac;
+  box-shadow: 0 6px 24px rgba(14, 130, 172, 0.2);
   transform: scale(1.03);
 }
 
@@ -133,14 +132,12 @@
   width: 20px;
   height: 20px;
   transition: transform 0.3s ease;
-  color: #3b82f6;
+  color: #0e82ac;
 }
 
 .rotate {
   transform: rotate(180deg);
 }
-
-
 
 @keyframes expand {
   from {
@@ -155,12 +152,11 @@
   }
 }
 
-/* Slightly bigger icon with subtle bounce */
 .iconBox {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: #eff6ff;
+  background: #e5f6fb;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,23 +166,13 @@
 .phase {
   font-size: 32px;
   font-weight: bold;
-  background: linear-gradient(to right, #2563eb, #60a5fa);
+  background: linear-gradient(to right, #0e82ac, #61b4cf);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.iconBox {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: #eff6ff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .icon {
-  color: #2563eb;
+  color: #0e82ac;
   width: 24px;
   height: 24px;
 }
@@ -212,50 +198,7 @@
   width: 64px;
   height: 64px;
   border-radius: 9999px;
-  background: #bfdbfe;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.iconLarge {
-  width: 32px;
-  height: 32px;
-  color: #2563eb;
-}
-
-.cta {
-  margin-top: 80px;
-  text-align: center;
-}
-
-.ctaButton {
-  background: linear-gradient(to right, #2563eb, #3b82f6);
-  color: white;
-  padding: 16px 32px;
-  font-size: 18px;
-  font-weight: 600;
-  border: none;
-  border-radius: 9999px;
-  cursor: pointer;
-}
-
-.iconCircleContainer {
-  position: relative;
-  z-index: 1;
-}
-
-.pingWrapper {
-  position: relative;
-  width: 64px;
-  height: 64px;
-}
-
-.iconCircle {
-  width: 64px;
-  height: 64px;
-  border-radius: 9999px;
-  background: #bfdbfe;
+  background: #c1e7f2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -267,7 +210,7 @@
 .iconLarge {
   width: 32px;
   height: 32px;
-  color: #2563eb;
+  color: #0e82ac;
 }
 
 .ping {
@@ -275,10 +218,26 @@
   width: 64px;
   height: 64px;
   border-radius: 9999px;
-  background-color: #bfdbfe;
+  background-color: #c1e7f2;
   animation: ping 2s infinite;
   opacity: 0.4;
   z-index: 0;
+}
+
+.cta {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.ctaButton {
+  background: linear-gradient(to right, #0e82ac, #61b4cf);
+  color: white;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
 }
 
 /* Animations */
@@ -302,6 +261,7 @@
   }
 }
 
+/* Responsive */
 @media screen and (max-width: 768px) {
   .section {
     padding: 60px 16px;
@@ -321,7 +281,7 @@
   }
 
   .verticalLine {
-    display: none; /* Hide the central line on small screens */
+    display: none;
   }
 
   .stepRow {
@@ -444,7 +404,7 @@
     margin-left: 10px;
     height: 2px;
     width: 0;
-    background: linear-gradient(to right, #60a5fa, #2563eb); /* Tailwind Blue */
+    background: linear-gradient(to right, #61b4cf, #0e82ac);
     border-radius: 1px;
     animation: growLine 1s ease forwards;
   }
@@ -460,4 +420,3 @@
     }
   }
 }
-

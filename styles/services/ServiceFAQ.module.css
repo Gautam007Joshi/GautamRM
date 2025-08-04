@@ -46,7 +46,7 @@
 
 .toggleIcon {
   font-size: 1.5rem;
-  color: #3b82f6;
+  color: #0e82ac; /* updated */
 }
 
 .answer {
@@ -57,5 +57,5 @@
 }
 
 .active .question {
-  color: #2563eb;
+  color: #0e82ac; /* updated */
 }

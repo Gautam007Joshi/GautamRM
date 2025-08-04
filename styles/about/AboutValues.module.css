@@ -1,5 +1,5 @@
 .valuesSection {
-  background-color: #f0f4ff;
+  background-color: #e3f6fb; /* Lightened version of #0e82ac */
   padding: 100px 24px;
   min-height: 100vh;
   transition: all 0.6s ease;
@@ -19,7 +19,7 @@
 
 .heading h2 {
   font-size: 2.8rem;
-  background: linear-gradient(90deg, #4f46e5, #3b82f6);
+  background: linear-gradient(90deg, #0e82ac, #3fb7d3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 12px;
@@ -55,7 +55,7 @@
 }
 
 .icon {
-  background-color: #dbeafe;
+  background-color: #d1eef6; /* soft tint of #0e82ac */
   width: 64px;
   height: 64px;
   border-radius: 50%;
@@ -67,7 +67,7 @@
 
 .icon i {
   font-size: 24px;
-  color: #3b82f6;
+  color: #0e82ac;
 }
 
 .card h3 {
@@ -117,7 +117,7 @@
 
 .expandedLeft h2 {
   font-size: 2.5rem;
-  background: linear-gradient(90deg, #4f46e5, #3b82f6);
+  background: linear-gradient(90deg, #0e82ac, #3fb7d3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 24px;
@@ -149,16 +149,16 @@
   font-size: 1rem;
   color: #1e293b;
   padding: 8px 0;
-  border-left: 3px solid #3b82f6;
+  border-left: 3px solid #0e82ac;
   padding-left: 12px;
   margin-bottom: 8px;
-  background: #f1f5ff;
+  background: #e6f7fc;
   border-radius: 6px;
 }
 
 .backBtn {
   margin-top: 40px;
-  background: #3b82f6;
+  background: #0e82ac;
   color: white;
   padding: 12px 24px;
   font-size: 1rem;
@@ -169,7 +169,7 @@
 }
 
 .backBtn:hover {
-  background: #2563eb;
+  background: #0a6787;
 }
 
 @keyframes fadeIn {
@@ -187,12 +187,12 @@
   display: inline-block;
   margin-top: 12px;
   font-size: 0.9rem;
-  color: #3b82f6;
+  color: #0e82ac;
   transition: all 0.3s ease;
   font-weight: 500;
 }
 
 .card:hover .clickHint {
   transform: translateX(5px);
-  color: #2563eb;
+  color: #0a6787;
 }

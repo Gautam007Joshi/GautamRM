@@ -10,7 +10,7 @@
 }
 
 .heading h2 {
-  color: #3B82F6;
+  color: #0e82ac; /* changed from #3B82F6 */
   font-weight: 600;
   text-transform: uppercase;
   font-size: 1rem;
@@ -38,17 +38,17 @@
   text-align: center;
   transition: all 0.3s ease;
   cursor: default;
-  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.05);
+  box-shadow: 0 2px 6px rgba(14, 130, 172, 0.05); /* updated from rgba(59, 130, 246, 0.05) */
 }
 
 .card:hover {
   background-color: #eaf4ff;
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 12px 28px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 12px 28px rgba(14, 130, 172, 0.15); /* updated */
 }
 
 .iconWrapper {
-  background-color: #3B82F6;
+  background-color: #0e82ac; /* changed */
   color: white;
   width: 3rem;
   height: 3rem;

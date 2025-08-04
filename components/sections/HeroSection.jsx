@@ -16,26 +16,8 @@ export default function HeroSection() {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [floatItems, setFloatItems] = useState([]);
 
-  const [dragHintPos, setDragHintPos] = useState({ x: 0, y: 0 });
-const [showHint, setShowHint] = useState(false);
-const [isDragging, setIsDragging] = useState(false);
 
 const router = useRouter();
-
-
-const handleModelMouseMove = (e) => {
-  const rect = e.currentTarget.getBoundingClientRect();
-  setDragHintPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-};
-
-const handleModelEnter = () => setShowHint(true);
-const handleModelLeave = () => {
-  setShowHint(false);
-  setIsDragging(false);
-};
-
-const handleMouseDown = () => setIsDragging(true);
-const handleMouseUp = () => setIsDragging(false);
 
 
   useEffect(() => {
@@ -138,34 +120,21 @@ const handleMouseUp = () => setIsDragging(false);
           </div>
         </div>
 
-        {/* Right Side 3D Model */}
-      <div
-  className={styles.modelWrapper}
-  onMouseMove={handleModelMouseMove}
-  onMouseEnter={handleModelEnter}
-  onMouseLeave={handleModelLeave}
-  onMouseDown={handleMouseDown}
-  onMouseUp={handleMouseUp}
->
-  {!isDragging && showHint && (
-    <div
-      className={styles.dragHint}
-      style={{ left: `${dragHintPos.x}px`, top: `${dragHintPos.y}px` }}
-    >
-      🌀 Drag Me
-    </div>
-  )}
+        {/* Right Side Image */}
+        <div className={styles.imageWrapper} style={{ flex: '1 1 450px' }}>
+          <img
+            src="/heroPhoto.png"
+            alt="Hero visual"
+            style={{
+              width: '100%',
+              height: 'auto',
+              objectFit: 'contain',
+              borderRadius: '8px',
+            }}
+          />
+        </div>
 
-  <Canvas
-    shadows
-    camera={{ position: [0, 0, 5], fov: 45 }}
-    style={{ width: '100%', height: '100%' }}
-  >
-    <Suspense fallback={null}>
-      <LogoModel />
-    </Suspense>
-  </Canvas>
-</div>
+        
 
 <div className={styles.auditFormSection}>
   <form className={styles.auditFormHorizontal}>

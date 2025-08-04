@@ -16,7 +16,7 @@
 }
 
 .subtitle {
-  color: #3B82F6;
+  color: #0e82ac;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -59,14 +59,14 @@
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 10px 25px rgba(14, 130, 172, 0.15); /* Updated shadow color */
 }
 
 .stepNumber {
   position: absolute;
   top: -0.75rem;
   left: -0.75rem;
-  background-color: #dbeafe;
+  background-color: #e0f6fd; /* Light version of #0e82ac */
   height: 3rem;
   width: 3rem;
   display: flex;
@@ -74,7 +74,7 @@
   justify-content: center;
   border-radius: 9999px;
   font-weight: 700;
-  color: #3B82F6;
+  color: #0e82ac;
   font-size: 1rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }

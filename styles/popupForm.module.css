@@ -77,7 +77,7 @@
 .icon {
   font-size: 2.5rem;
   background: white;
-  color: #324dbd;
+  color: #0e82ac;
   padding: 0.6rem;
   border-radius: 10px;
   display: inline-block;
@@ -106,7 +106,7 @@
 .submitBtn {
   margin-top: 1.5rem;
   padding: 0.9rem 2rem;
-  background: #f16624;
+  background: #0e82ac;
   color: white;
   border: none;
   font-weight: bold;
@@ -128,7 +128,7 @@
 .formHeading {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  color: #1b4ae5;
+  color: #0e82ac;
   font-weight: 600;
 }
 
@@ -157,8 +157,8 @@
 .highlightBox {
   display: inline-block;
   padding: 0.3rem 0.6rem;
-  border: 2px solid #5dacd4;
-  background-color: #5dacd4;
+  border: 2px solid #1fb8f0;
+  background-color: #1fb8f0;
   color: #fff;
   font-weight: bold;
   border-radius: 6px;

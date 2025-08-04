@@ -1,9 +1,39 @@
 // components/ServiceHero.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from '@/styles/services/ServiceHero.module.css';
 import { FaPlayCircle } from 'react-icons/fa';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function ServiceHero({ titleLine1, titleLine2, description, imageUrl }) {
+  useEffect(() => {
+    gsap.from('.textBlock', {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.heroSection',
+        start: 'top center', // Adjust the trigger position as needed
+        toggleActions: 'play none none reverse',
+      }
+    });
+
+    gsap.from('.heroImage', {
+      opacity: 0,
+      scale: 0.8,
+      duration: 1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.heroSection',
+        start: 'top center', // Adjust the trigger position as needed
+        toggleActions: 'play none none reverse',
+      }
+    });
+  }, []);
+
   return (
     <div className={styles.heroSection}>
       <div className={styles.heroContainer}>

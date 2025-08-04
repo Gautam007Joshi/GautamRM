@@ -2,7 +2,15 @@
   position: relative;
   background: linear-gradient(to right, #eff6ff, #ffffff);
   overflow: hidden;
-  margin-top: 30px;
+  margin-top: 0;
+  margin-left: -100px;
+}
+
+.heroImage{
+  width: 85vh !important;
+  height: auto !important;
+  margin-left: -120px !important;
+  margin-top: 210px;
 }
 
 .heroContainer {
@@ -14,6 +22,8 @@
   position: relative;
   z-index: 10;
   padding-bottom: 8rem;
+  padding-left: 2rem; /* Adjusted padding */
+  padding-top: 6rem; /* Adjusted padding */
 }
 
 .textBlock {
@@ -31,6 +41,7 @@
 }
 
 @media (min-width: 640px) {
+  
   .heading {
     font-size: 3rem;
   }
@@ -47,7 +58,7 @@
 }
 
 .gradientText {
-  background: linear-gradient(90deg, #3B82F6, #1D4ED8);
+  background: linear-gradient(90deg, #0e82ac, #0e82ac);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -76,7 +87,7 @@
 
 .primaryBtn {
   padding: 1rem 2.5rem;
-  background-color: #3b82f6;
+  background-color: #0e82ac;
   color: white;
   font-weight: 600;
   font-size: 1rem;
@@ -90,7 +101,7 @@
 .secondaryBtn {
   padding: 1rem 2.5rem;
   background-color: #dbeafe;
-  color: #1d4ed8;
+  color: #0e82ac;
   font-weight: 600;
   font-size: 1rem;
   border-radius: 0.5rem;
@@ -106,12 +117,12 @@
 
 .btnHover {
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 4px 6px rgba(14, 130, 172, 0.2);
 }
 
 .btnHover:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 15px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 10px 15px rgba(14, 130, 172, 0.3);
 }
 
 .heroImageWrapper {
@@ -125,12 +136,19 @@
     right: 0;
     top: 0;
     height: 100%;
-    width: 50%;
+    width: 40%; /* Reduced width to make the image smaller */
   }
 
   .heroImage {
     height: 100%;
     width: 100%;
     object-fit: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection{
+    margin-left: -30px !important;
+    margin-top: -40px;
   }
 }

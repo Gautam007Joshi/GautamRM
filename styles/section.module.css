@@ -45,30 +45,17 @@ body.dark-mode .sectionCard::before {
   background: rgba(0, 0, 0, var(--overlay-opacity, 0.3));
 }
 
-/* Optional: Soft overlay for light mode */
-.sectionCard::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: rgba(0, 0, 0, var(--overlay-opacity, 0.05));
-  transition: background 0.3s ease;
-}
-
 .sectionCard::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    rgba(255, 255, 255, 0.08),
-    rgba(255, 255, 255, 0.03)
-  );
-  backdrop-filter: blur(2px); /* Optional for glow */
-  opacity: var(--overlay-opacity, 0);
-  transition: opacity 0.3s ease;
-  z-index: 2;
+  background: rgba(0, 0, 0, 1); /* pure black overlay */
+  opacity: var(--overlay-opacity, 0); /* JS sets this */
   pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10; /* On top of content */
 }
+
 
 
 .darkSection {

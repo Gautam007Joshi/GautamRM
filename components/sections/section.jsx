@@ -13,49 +13,50 @@ const Section = forwardRef(
     const sectionRef = ref || sectionWrapRef;
 
     useEffect(() => {
-  const section = sectionRef.current;
-  const card = section?.querySelector(`.${styles.sectionCard}`);
-  const nextSection = section?.nextElementSibling;
+      const section = sectionRef.current;
+      const card = section?.querySelector(`.${styles.sectionCard}`);
+      const nextSection = section?.nextElementSibling;
 
-  if (!section || !card) return;
+      if (!section || !card) return;
 
-  const tl = gsap.fromTo(
-    card,
-    { y: 300 },
-    {
-      y: -200,
-      ease: 'power1.out',
-      scrollTrigger: {
-        trigger: section,
-        start: 'top 100%',
-        end: 'top 10%',
-        scrub: true,
-      },
-    }
-  );
+      // Animation for the card moving up
+      const tl = gsap.fromTo(
+        card,
+        { y: 300 },
+        {
+          y: -200,
+          ease: 'power1.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 100%',
+            end: 'top 10%',
+            scrub: true,
+          },
+        }
+      );
 
-  let overlayTrigger;
+      // ScrollTrigger for the dark overlay effect
+      let overlayTrigger;
 
-  if (!disableOverlay && nextSection) {
-    overlayTrigger = ScrollTrigger.create({
-      trigger: nextSection,
-      start: 'top 40%',
-      end: 'top 10%',
-      scrub: true,
-      onUpdate: (self) => {
-        const opacity = self.progress * 0.6;
-        card.style.setProperty('--overlay-opacity', opacity.toFixed(2));
-      },
-    });
-  }
+      if (!disableOverlay && nextSection) {
+        overlayTrigger = ScrollTrigger.create({
+          trigger: nextSection,
+          start: 'top 40%',
+          end: 'top 10%',
+          scrub: true,
+          onUpdate: (self) => {
+            const opacity = self.progress * 0.6; // Adjust the multiplier as needed
+            card.style.setProperty('--overlay-opacity', opacity.toFixed(2));
+          },
+        });
+      }
 
-  return () => {
-    tl.scrollTrigger?.kill();
-    tl.kill();
-    overlayTrigger?.kill();
-  };
-}, []);
-
+      return () => {
+        tl.scrollTrigger?.kill();
+        tl.kill();
+        overlayTrigger?.kill();
+      };
+    }, []);
 
     return (
       <section

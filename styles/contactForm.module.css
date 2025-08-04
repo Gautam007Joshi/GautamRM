@@ -14,7 +14,7 @@
   right: -100px;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(0, 119, 204, 0.3), transparent);
+  background: radial-gradient(circle, #20ade0, transparent);
   filter: blur(80px);
   z-index: 1;
 }
@@ -36,7 +36,7 @@
   font-size: 3rem;
   font-weight: 800;
   color: transparent;
-  background: linear-gradient(to right, #111827, #0077cc);
+  background: linear-gradient(to right, #111827, #41c1ef);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
@@ -110,7 +110,7 @@
 .floatingGroup input:focus,
 .floatingGroup textarea:focus,
 .floatingGroup select:focus {
-  border-color: #0077cc;
+  border-color: #0e82ac;
   box-shadow: 0 0 0 4px rgba(0, 119, 204, 0.15);
   outline: none;
 }
@@ -139,7 +139,7 @@
   background: #e9f0fb;
   padding: 0 0.4rem;
   border-radius: 6px;
-  color: #0077cc;
+  color: #0e82ac;
 }
 
 /* ✨ Optional Input Icons */
@@ -201,4 +201,103 @@
   .contactForm {
     margin-left: -40px; /* Adjust as needed */
   }
+}
+
+/* 🎯 Custom Button Styling */
+.cssbuttonsIoButton {
+  background: #0e82ac;
+  color: white;
+  font-family: inherit;
+  padding: 0.35em 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  position: relative;
+  height: 2.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  padding-right: 3.3em;
+}
+
+.btnText {
+  z-index: 1;
+}
+
+/* Full-width overlay when sent */
+.sentOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: white;
+  color: #0077cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.95rem;
+  z-index: 2;
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* White circle container (icon area) */
+.icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #0077cc !important;
+  right: 0.3em;
+  transition: all 0.3s;
+  z-index: 1;
+}
+
+/* Spinner loader */
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #0077cc;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.cssbuttonsIoButton:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #3394d9 !important;
+}
+
+.cssbuttonsIoButton:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttonsIoButton:active .icon {
+  transform: scale(0.95);
 }

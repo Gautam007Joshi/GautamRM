@@ -55,7 +55,7 @@ const scrollRight = () => {
 
 
   return (
-    <Section className={styles.blogsThemeSection} disableOverlay>
+    <Section>
       <section className={styles.blogSection}>
         <h2 className={styles.sectionTitle}>Latest Blogs</h2>
         <p className={styles.sectionSubtitle}>Insights, strategies, and stories that inspire growth.</p>
@@ -97,6 +97,10 @@ const scrollRight = () => {
         ) : (
           <p style={{ textAlign: 'center', marginTop: '2rem' }}>No blogs found.</p>
         )}
+
+        <div className={styles.exploreButtonWrapper}>
+    <a href="/blog" className={styles.exploreButton}>Explore All Blogs</a>
+  </div>
       </section>
     </Section>
   );

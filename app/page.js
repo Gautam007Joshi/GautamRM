@@ -10,8 +10,7 @@ import Footer from '@/components/sections/Footer';
 import BlogsServer from '@/components/sections/BlogsServer';
 import ContactForm from '@/components/sections/ContactForm';
 import AOSClientWrapper from '@/components/sections/AOSClientWrapper';
-import SplashScreen from '@/components/splash/SplashScreen'; // ✅ Add this line
-
+import SplashScreen from '@/components/splash/SplashScreen';
 
 export default function Home() {
   const contactRef = useRef(null);
@@ -30,6 +29,17 @@ export default function Home() {
       setAllowAnimation(true);
     }
   }, [showSplash]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('aos').then((AOS) => {
+        AOS.init({
+          duration: 800,
+          once: true,
+        });
+      });
+    }
+  }, []);
 
   return (
     <>
@@ -55,14 +65,13 @@ export default function Home() {
           <PopupForm />
           <HeroSection className="dark-section" />
           <ServicesSection onContactClick={scrollToContact} />
-          <div className="mobileSpacer"></div>
-          <AboutStepper />
+          <div className="mobileSpacer" style={{ height: '20px' }}></div>
+          <AboutStepper/>
           <BlogsServer />
           <div ref={contactRef}>
             <ContactForm />
           </div>
           <Footer />
-
         </AOSClientWrapper>
       </div>
     </>
