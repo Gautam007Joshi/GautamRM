@@ -1,3 +1,8 @@
+.tallsection {
+  height: 180vh !important;
+}
+
+
 .servicesSection {
   padding: 5rem 2rem;
   background-color: #ffffff;
@@ -27,8 +32,8 @@
 .highlight::after {
   content: '';
   position: absolute;
-  left: 0;
-  top: 60px;
+  left: 1px;
+  top: 52px;
   height: 3px;
   width: 100%;
   background: linear-gradient(90deg, #0e82ac, #0e82ac);
@@ -306,6 +311,7 @@
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
   }
+
 }
 
 .cardWrapper {
@@ -322,4 +328,59 @@
     padding-bottom: 0 !important;
     margin-bottom: 0 !important;
   }
+
+  .tallsection{
+    height: 250vh !important;
+  }
 }
+
+@media (min-width: 800px) and (max-width: 1126px) {
+  .tallsection{
+    height: 250vh !important;
+  }
+}
+
+@media (min-width: 1127px) and (max-width: 1300px) {
+
+  .servicesSection {
+    padding: 5rem 3rem; /* Adds 3rem left & right padding */
+    
+    
+  }
+  .servicesGrid {
+    grid-template-columns: repeat(5, 1fr); /* force 5 cards per row */
+    gap: 1.5rem; /* horizontal and vertical gap */
+  }
+
+  /* Add top margin to the second row */
+  .servicesGrid > .cardWrapper:nth-child(n+6) {
+    margin-top: 2rem;
+    padding-top: 30px;
+  }
+
+  /* Optional: Ensure .cardWrapper doesn’t add too much height */
+  .cardWrapper {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: visible;
+  }
+
+  /* Optional: Adjust card size for this screen size */
+  .card {
+    width: 100%;
+    padding: 1.2rem;
+  }
+
+  .statsGrid {
+  margin-top: 170px;
+}
+
+
+}
+
+.bottomSpacer {
+  height: 0px; /* default - no space on large screens */
+}
+
+/* section.module.css */

@@ -6,14 +6,14 @@
   left: 0;
   padding: 10px 20px;
   z-index: 1000;
-  background-color: white; /* or transparent */
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .05);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 980px) {
   .navbarContainer {
     height: 98px;
     flex-direction: column;
@@ -22,7 +22,6 @@
   }
 }
 
-
 .logoContainer {
   position: fixed;
   top: 40px;
@@ -30,49 +29,44 @@
   z-index: 1001;
 }
 
-
 .logo {
   width: 300px;
   height: auto;
   object-fit: contain;
   cursor: pointer;
   border-radius: 10px;
-  transition: transform 0.2s ease;
+  transition: transform .2s ease;
 }
 
 .logo:hover {
   transform: scale(1.05);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 980px) {
   .logoContainer {
     top: 32px;
     left: -37px;
   }
-
   .logo {
     height: 48px;
   }
 }
 
-
 .menu {
-  padding: 0.5rem;
+  padding: .5rem;
   background-color: #fff;
   display: flex;
   justify-content: center;
   border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.075);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .075);
   gap: 10px;
   position: fixed;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  
 }
 
-/* Base link style */
 .link {
   display: inline-flex;
   justify-content: flex-start;
@@ -85,7 +79,7 @@
   text-decoration: none;
   color: #111;
   background-color: #f2f2f2;
-  transition: width 0.25s ease-in-out;
+  transition: width .25s ease-in-out;
   font-size: 14px;
   cursor: pointer;
 }
@@ -107,40 +101,23 @@
   font-size: 14px;
   opacity: 0;
   transform: translateX(100%);
-  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  transition: transform .2s ease-in-out, opacity .2s ease-in-out;
 }
 
-/* Hover effect ONLY on desktop */
 @media (min-width: 601px) {
   .link:hover {
     width: 150px;
   }
-
   .link:hover .megaDropdown {
-  display: block;
-}
-
-
+    display: block;
+  }
   .link:hover .linkTitle {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
-/* Expanded effect (click on mobile) */
-.expanded {
-  width: 150px;
-}
-
-.expanded .linkTitle {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-
-
-/* === Mobile === */
-@media (max-width: 600px) {
+@media (max-width: 980px) {
   .menu {
     flex-wrap: wrap;
     justify-content: center;
@@ -151,42 +128,36 @@
     transform: translateX(-50%);
     gap: 8px;
   }
-
   .link {
     width: 50px;
     height: 45px;
     font-size: 12px;
   }
-
-  .expanded {
-    width: 140px;
-  }
-
   .linkIcon {
     width: 22px;
     height: 22px;
     margin-left: 10px;
   }
-
   .linkTitle {
     font-size: 12px;
     margin-left: 24px;
   }
 }
+
 .megaDropdown {
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: #ffffff;
+  background: #fff;
   border-radius: 18px;
   padding: 40px 50px;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, .15);
   z-index: 999;
   display: none;
   width: 90vw;
   max-width: 1200px;
-  animation: fadeIn 0.3s ease-in-out;
+  animation: fadeIn .3s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -231,7 +202,7 @@
   gap: 10px;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all .25s ease;
   font-weight: 500;
 }
 
@@ -239,21 +210,20 @@
   background-color: #f3f8ff;
   color: #0070f3;
   transform: translateX(4px);
-  box-shadow: 0 2px 8px rgba(0, 112, 243, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 112, 243, .12);
 }
 
 .dropdownItem span {
   font-size: 16px;
   color: #0070f3;
 }
-/* Hide desktop navbar in mobile */
-@media (max-width: 600px) {
+
+@media (max-width: 980px) {
   .menu {
     display: none;
   }
 }
 
-/* Hamburger Icon */
 .hamburger {
   display: none;
   position: fixed;
@@ -272,16 +242,15 @@
   width: 100%;
   background: #111;
   border-radius: 2px;
-  transition: 0.3s ease;
+  transition: .3s ease;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 980px) {
   .hamburger {
     display: flex;
   }
 }
 
-/* Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
@@ -289,14 +258,14 @@
   width: 80%;
   max-width: 300px;
   height: 100vh;
-  background: white;
+  background: #fff;
   z-index: 1100;
   padding: 60px 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  transition: left 0.3s ease-in-out;
-  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+  transition: left .3s ease-in-out;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, .1);
 }
 
 .sidebar.active {
@@ -311,7 +280,7 @@
   font-weight: 500;
   color: #111;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
+  transition: all .2s ease-in-out;
   cursor: pointer;
 }
 
@@ -319,7 +288,6 @@
   color: #0070f3;
   transform: translateX(5px);
 }
-
 
 .mobileDropdown {
   display: flex;
@@ -348,7 +316,7 @@
   gap: 8px;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background .2s ease;
 }
 
 .mobileDropdownItem:hover {
@@ -359,12 +327,12 @@
 .arrowIcon {
   margin-left: auto;
   font-size: 14px;
-  transform: rotate(0deg);
-  transition: transform 0.3s ease;
+  transform: rotate(0);
+  transition: transform .3s ease;
 }
 
 .arrowOpen {
-  transform: rotate(90deg); /* from ▶ to ⌄ */
+  transform: rotate(90deg);
 }
 
 .letsTalkButton {
@@ -372,30 +340,28 @@
   font-size: 1rem;
   padding: 16px 36px;
   background: linear-gradient(135deg, #20ade0, #1688b1);
-  color: #ffffff;
+  color: #fff;
   font-weight: 600;
   border: none;
   border-radius: 14px;
-  box-shadow: 0 10px 24px rgba(21, 78, 171, 0.35);
+  box-shadow: 0 10px 24px rgba(21, 78, 171, .35);
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Inter', sans-serif;
+  transition: all .3s ease;
+  font-family: Inter, sans-serif;
   backdrop-filter: blur(8px);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
 }
 
 .letsTalkButton:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 14px 30px rgba(66, 133, 244, 0.45);
+  box-shadow: 0 14px 30px rgba(66, 133, 244, .45);
   background: linear-gradient(135deg, #1688b1, #20ade0);
 }
 
-
-/* Slide-in Contact Panel */
 .contactPanel {
   position: fixed;
   top: 0;
@@ -403,19 +369,19 @@
   width: 350px;
   height: 100vh;
   background-color: #fff;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-  transition: right 0.4s ease;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, .1);
+  transition: right .4s ease;
   z-index: 9999;
   padding: 20px;
   overflow-y: auto;
   visibility: hidden;
-  transition: right 0.4s ease, visibility 0s linear 0.4s;
+  transition: right .4s ease, visibility 0s linear .4s;
 }
 
 .contactPanel.open {
   right: 0;
   visibility: visible;
-  transition: right 0.4s ease, visibility 0s linear 0s;
+  transition: right .4s ease, visibility 0s linear 0s;
   z-index: 9999 !important;
 }
 
@@ -439,7 +405,7 @@
   top: 0;
   right: 0;
   font-size: 22px;
-  background: none;
+  background: 0 0;
   border: none;
   cursor: pointer;
 }
@@ -461,23 +427,21 @@
 
 .contactForm button {
   background-color: #1e2532;
-  color: white;
+  color: #fff;
   padding: 12px;
   border: none;
   border-radius: 8px;
-  font-weight: bold;
+  font-weight: 700;
   cursor: pointer;
 }
 
 .navWrapper {
   display: flex;
   align-items: center;
-  margin-left: auto; /* pushes nav + button to the right */
+  margin-left: auto;
   gap: 20px;
   position: relative;
 }
-
-/* === CONTACT PANEL PREMIUM STYLES === */
 
 .contactPanel {
   position: fixed;
@@ -485,10 +449,10 @@
   top: 0;
   height: 100%;
   width: 420px;
-  background: #ffffff;
-  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, .1);
   padding: 40px 30px;
-  transition: right 0.4s ease;
+  transition: right .4s ease;
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -509,7 +473,7 @@
 .contactHeader p {
   color: #555;
   margin-bottom: 30px;
-  font-size: 0.95rem;
+  font-size: .95rem;
 }
 
 .closeButton {
@@ -517,7 +481,7 @@
   top: 18px;
   right: 20px;
   font-size: 1.5rem;
-  background: transparent;
+  background: 0 0;
   border: none;
   cursor: pointer;
   color: #333;
@@ -534,10 +498,10 @@
 .contactForm select,
 .contactForm textarea {
   padding: 16px;
-  font-size: 0.8rem;
+  font-size: .8rem;
   border: 1.5px solid #65676a;
   border-radius: 15px;
-  transition: border 0.3s, box-shadow 0.3s;
+  transition: border .3s, box-shadow .3s;
   background: #f9fbff;
 }
 
@@ -545,8 +509,8 @@
 .contactForm select:focus,
 .contactForm textarea:focus {
   border-color: #297cf0;
-  box-shadow: 0 0 0 3px rgba(41, 124, 240, 0.15);
-  outline: none;
+  box-shadow: 0 0 0 3px rgba(41, 124, 240, .15);
+  outline: 0;
 }
 
 .contactForm textarea {
@@ -556,22 +520,20 @@
 
 .contactForm button {
   background: linear-gradient(to right, #297cf0, #195fd4);
-  color: white;
+  color: #fff;
   padding: 16px;
   font-size: 1.05rem;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   font-weight: 600;
-  transition: 0.3s ease;
+  transition: .3s ease;
 }
 
 .contactForm button:hover {
   background: linear-gradient(to right, #195fd4, #297cf0);
   transform: translateY(-2px);
 }
-
-/* === SOCIAL CONTACT ICONS === */
 
 .socialContact {
   display: flex;
@@ -593,27 +555,26 @@
   font-size: 1rem;
   color: #fff;
   width: 100%;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background .3s ease, transform .2s ease;
 }
 
 .whatsapp {
-  background-color: #25D366;
-  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
+  background-color: #25d366;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, .2);
 }
 
 .instagram {
-  background-color: #ef5258; /* Solid Instagram blue */
-  box-shadow: 0 4px 10px rgba(64, 93, 230, 0.2);
+  background-color: #ef5258;
+  box-shadow: 0 4px 10px rgba(64, 93, 230, .2);
 }
 
 .socialContact a:hover {
   transform: translateY(-2px);
-  opacity: 0.95;
+  opacity: .95;
 }
 
-/* Bottom-sticky Let’s Talk inside sidebar */
 .sidebarFooter {
-  margin-top: auto;       /* pushes to bottom */
+  margin-top: auto;
   padding-top: 20px;
   border-top: 1px solid #e5e5e5;
 }
@@ -632,105 +593,84 @@
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all .3s ease;
 }
 
 .letsTalkSidebarButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(21, 78, 171, 0.35);
+  box-shadow: 0 6px 16px rgba(21, 78, 171, .35);
 }
 
-/* ==========  MOBILE RULES  ========== */
-@media (max-width: 600px) {
-
-  /* Logo at top of sidebar */
-.sidebarLogo {
-  display: flex;
-  justify-content: end;
-  padding: 12px 0;
-  border-bottom: 1px solid #e5e5e5;
-  margin-top: -40px;
-  
-}
-
-.sidebarLogo img {
-  height: 46px;      /* tweak to taste */
-  cursor: pointer;
-}
-
-  .sidebar{
-    overflow-y: auto;   /* make it scrollable */
+@media (max-width: 980px) {
+  .sidebarLogo {
+    display: flex;
+    justify-content: end;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e5e5;
+    margin-top: -40px;
+  }
+  .sidebarLogo img {
+    height: 46px;
+    cursor: pointer;
+  }
+  .sidebar {
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
-
   .sidebarFooter {
-    margin-top: auto;          /* keeps it at bottom */
-    margin-bottom: 50px;       /* lift it up a bit */
-    padding-top: 10px;         /* optional tighter spacing */
+    margin-top: auto;
+    margin-bottom: 50px;
+    padding-top: 10px;
   }
-
   .contactPanel {
     padding-top: 24px 16px;
     width: 100%;
     max-width: 320px;
   }
-
   .contactHeader h4 {
     font-size: 1.3rem;
   }
-
   .contactHeader p {
-    font-size: 0.8rem;
+    font-size: .8rem;
   }
-
-  .contactForm{
+  .contactForm {
     margin-top: -50px;
   }
-
+  .contactForm button,
   .contactForm input,
   .contactForm select,
-  .contactForm textarea,
-  .contactForm button {
+  .contactForm textarea {
     padding: 10px 12px;
-    font-size: 0.85rem;
+    font-size: .85rem;
     border-radius: 10px;
   }
-
   .contactForm button {
     padding: 12px;
-    font-size: 0.9rem;
+    font-size: .9rem;
   }
-
   .socialContact a {
     padding: 10px;
-    font-size: 0.85rem;
+    font-size: .85rem;
   }
-
   .contactPanel.open {
     right: 0;
   }
-  /* Navbar layout */
   .navbarContainer {
     height: 98px;
     flex-direction: column;
     align-items: flex-start;
     padding: 10px;
   }
-
   .menu {
-    display: none;          /* hide desktop nav */
+    display: none;
   }
-
   .logoContainer {
     top: 32px;
     left: -37px;
   }
-
   .logo {
     height: 48px;
   }
-
-  /* Hamburger always visible on mobile */
   .hamburger {
     display: flex !important;
     position: fixed;
@@ -743,48 +683,59 @@
     flex-direction: column;
     justify-content: space-between;
   }
-
-  /* Hide hamburger when contact panel is open */
   body.contactPanelOpen .hamburger {
     display: none !important;
   }
-
-  /* Hide desktop “Let’s Talk” button */
   .desktopOnly {
     display: none;
   }
 }
 
-@media (min-width: 601px) and (max-width: 1024px) {
-  .sidebarLogo{
+@media (min-width: 981px) and (max-width: 1272px) {
+  .sidebarLogo {
     display: none;
   }
-} 
+  .hamburger {
+    display: none;
+  }
+  .sidebar {
+    display: none;
+  }
+}
 
-/* Active link – professional dark highlight with text slightly left */
 @media (min-width: 601px) {
   .link.active {
     width: 150px !important;
-    padding: 0 26px;     /* deep navy */
-    color: #ffffff;                 /* white icon + text */
-    box-shadow: 0 0 0 1px #0f0f10;  /* thin accent border */
+    padding: 0 26px;
+    color: #fff;
+    box-shadow: 0 0 0 1px #0f0f10;
   }
-
   .link.active .linkIcon,
   .link.active .linkTitle {
     opacity: 1 !important;
     transform: none !important;
     color: #0c0b0d;
   }
-
   .link.active .linkTitle {
-    margin-left: 4px;               /* slight left adjustment */
+    margin-left: 4px;
   }
-
-  /* optional soft glow on hover (still dark) */
   .link.active:hover {
-    background-color: #dddbdb;      /* slightly lighter navy */
-    box-shadow: 0 0 0 1px #4a90ff, 0 4px 12px rgba(41, 124, 240, 0.25);
+    background-color: #dddbdb;
+    box-shadow: 0 0 0 1px #4a90ff, 0 4px 12px rgba(41, 124, 240, .25);
   }
 }
 
+@media (max-width: 980px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 980px) {
+  .menu {
+    display: none;
+  }
+  .letsTalkButton {
+    display: none;
+  }
+}

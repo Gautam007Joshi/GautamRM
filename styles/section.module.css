@@ -87,3 +87,8 @@ body.dark-mode .sectionCard::before {
 .noOverlay::after {
   display: none !important;
 }
+
+/* section.module.css */
+.tallSection {
+  height: 100px !important;
+}

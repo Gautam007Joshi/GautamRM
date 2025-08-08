@@ -250,9 +250,9 @@
 }
 
 @media (max-width: 768px){
-  .blogsThemeSection {
-  margin-top: -100px;
-}
+  .homeblogsection{
+    margin-top: -400px;
+  }
 }
 
 /* Explore Button Wrapper */

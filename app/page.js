@@ -64,7 +64,12 @@ export default function Home() {
           <Navbar />
           <PopupForm />
           <HeroSection className="dark-section" />
-          <ServicesSection onContactClick={scrollToContact} />
+          <ServicesSection
+  onContactClick={scrollToContact}
+  className="tallSection"
+/>
+
+
           <div className="mobileSpacer" style={{ height: '20px' }}></div>
           <AboutStepper/>
           <BlogsServer />

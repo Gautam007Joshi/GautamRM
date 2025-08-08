@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from '@/styles/chatbot/Chatbot.module.css';
 import { Bot, User, X } from 'lucide-react';
+import { getLenis } from '@/components/utils/SmoothScrollWrapper'; // ✅ add this
 
 /* ---------- MASSIVE FAQ (unchanged) ---------- */
 const faq = {
@@ -244,6 +245,47 @@ export default function ChatBot() {
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+
+  useEffect(() => {
+  const lenis = getLenis();
+  const chatBody = document.querySelector(`.${styles.chatBody}`);
+
+  if (!chatBody) return;
+
+  if (isOpen) {
+    lenis?.stop(); // Stop Lenis scroll when chatbot is open
+  } else {
+    lenis?.start(); // Resume background scroll
+  }
+
+  const preventBackgroundScroll = (e) => {
+    const { scrollTop, scrollHeight, clientHeight } = chatBody;
+
+    const isAtTop = scrollTop <= 0;
+    const isAtBottom = scrollTop + clientHeight >= scrollHeight - 1;
+
+    const isScrollingUp = e.deltaY < 0;
+    const isScrollingDown = e.deltaY > 0;
+
+    // ✅ Allow internal scroll — prevent only when content can't scroll further
+    if (
+      (isAtTop && isScrollingUp) ||
+      (isAtBottom && isScrollingDown)
+    ) {
+      e.preventDefault(); // Prevent background scroll
+    }
+    // ✅ Do NOT prevent scroll in other cases (let user scroll inside chatbot)
+  };
+
+  chatBody.addEventListener("wheel", preventBackgroundScroll, { passive: false });
+
+  return () => {
+    chatBody.removeEventListener("wheel", preventBackgroundScroll);
+    lenis?.start(); // Always resume scroll when chatbot closes
+  };
+}, [isOpen]);
+
+
 
   return (
     <>

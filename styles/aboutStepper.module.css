@@ -1,11 +1,19 @@
-/* Base styles */
 .aboutWrapper {
+  /* layout (unchanged) */
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 2rem;
   flex-wrap: wrap;
   overflow: visible;
+
+  /* NEW — elegant backdrop */
+  position: relative;
+}
+
+/* optional micro-animation on hover (slow parallax) */
+.aboutWrapper:hover {
+  transition: background-position 8s ease-in-out;
 }
 
 .left {
@@ -76,7 +84,7 @@
   flex: 1;
   min-width: 460px; /* Adjusted to match the width of the aboutImage */
   height: 525px; /* Adjusted to match the height of the aboutImage */
-  margin-left: -50px;
+  margin-left: 350px;
 }
 
 .image {
@@ -89,7 +97,7 @@
 .overlayImage {
   position: absolute;
   bottom: 0; /* Adjusted to position at the bottom */
-  left: -140px; /* Adjusted to position at the right */
+  left: -110px; /* Adjusted to position at the right */
   max-width: 100%; /* Ensures the overlay image scales down */
   height: auto; /* Maintains aspect ratio */
   object-fit: contain; /* Ensures the overlay image covers its container */
@@ -223,6 +231,7 @@
   }
 
   .aboutText h3 {
+    text-align: center;
     font-size: 1.2rem;
     margin-top: -12px;
   }
@@ -281,6 +290,8 @@
   }
 
   .exploreBtn {
+    display: flex;
+    justify-content: center;
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
   }
@@ -291,14 +302,15 @@
   }
 
   .overlayImage {
-    max-width: 100%; /* Make the overlay image full-width */
+    max-width: 45%; /* Make the overlay image full-width */
     height: auto; /* Adjust height to maintain aspect ratio */
-    left: 0; /* Center the overlay image */
-    bottom: 0; /* Position at the bottom */
+    left: 0 !important; /* Center the overlay image */
+    bottom: 40px !important; /* Position at the bottom */
   }
 
   .aboutText {
     text-align: left; /* Left-align the text */
+    margin-top: -30px;
   }
 }
 
@@ -319,3 +331,107 @@
     display: block;
   }
 }
+
+/* Wrapper row for h2 and buttons */
+.topRow {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+/* For screen width between 769px and 1200px */
+@media (min-width: 769px) and (max-width: 1200px) {
+
+  .aboutsteppersection{
+  height: 220vh !important;
+}
+  .topRow {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .left {
+    flex: 1;
+    text-align: left;
+  }
+
+  .left h2 {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .tabButtons {
+    flex-shrink: 0;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+
+  .aboutImage{
+    margin-top: -200px;
+  }
+
+  .image {
+  border-radius: 10px;
+  object-fit: cover; /* Ensures the image covers the container */
+  width: 100%; /* Ensures the image fills the container */
+  height: 100%; /* Ensures the image fills the container */
+}
+
+.overlayImage {
+  position: absolute;
+  bottom: 39px; /* Adjusted to position at the bottom */
+  left: 30px; /* Adjusted to position at the right */
+  max-width: 42%; /* Ensures the overlay image scales down */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: contain; /* Ensures the overlay image covers its container */
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.overlayImage:hover {
+  transform: scale(1.05);
+}
+
+.aboutText{
+  margin-top: -50px
+}
+}
+
+/* On smaller screens: stack vertically */
+@media (max-width: 768px) {
+  .topRow {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tabButtons {
+    justify-content: center;
+    margin-top: -30px; /* if needed */
+  }
+
+  .aboutImage{
+    margin-top: -200px;
+  }
+
+
+.overlayImage {
+  position: absolute;
+  bottom: 50px; /* Adjusted to position at the bottom */
+  left: 30px; /* Adjusted to position at the right */
+  width: 200px !important;
+  height: auto; /* Maintains aspect ratio */
+  object-fit: contain; /* Ensures the overlay image covers its container */
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.overlayImage:hover {
+  transform: scale(1.05);
+}
+}
+

@@ -1,9 +1,13 @@
+.homecontactform{
+  margin-top: -300px;
+}
+
 /* 🌐 Background Section */
 .bgWrapper {
   background: linear-gradient(to bottom right, #e9f0fb, #d6e4f9);
   padding: 6rem 2rem;
   position: relative;
-  overflow: hidden;
+  overflow: hidden ;
 }
 
 /* 🎆 Gradient Blob (decorative) */
@@ -21,6 +25,7 @@
 
 /* 🧱 Main Grid Layout */
 .container {
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   max-width: 1350px;
@@ -63,6 +68,7 @@
 
 /* 🎯 Advanced Form Styling */
 .contactForm {
+
   position: relative;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 20px;

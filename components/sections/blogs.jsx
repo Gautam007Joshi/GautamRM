@@ -55,7 +55,7 @@ const scrollRight = () => {
 
 
   return (
-    <Section>
+    <Section className={styles.homeblogsection}>
       <section className={styles.blogSection}>
         <h2 className={styles.sectionTitle}>Latest Blogs</h2>
         <p className={styles.sectionSubtitle}>Insights, strategies, and stories that inspire growth.</p>

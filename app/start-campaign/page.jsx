@@ -31,106 +31,110 @@ const SERVICE_DETAILS = {
   seo: {
     title: 'In-Depth SEO Campaign',
     paragraphs: [
-      'We perform comprehensive keyword research targeting high-converting terms tailored to your niche.',
-      'Technical SEO audit: optimize site speed, mobile UX, and site architecture for crawlability.',
-      'Content strategy & creation: pillar pages, blogs & resources focused on your audience.',
-      'Link-building outreach with high-authority publications to boost domain rating.',
-      'Ongoing optimization: monthly reviews, analytics insights, adjustments.'
+      'Unlock your website’s full potential with our comprehensive SEO strategies.',
+      'Our team performs meticulous keyword research, targeting high-converting terms tailored to your niche.',
+      'We conduct a thorough technical SEO audit, optimizing site speed, mobile UX, and site architecture for maximum crawlability.',
+      'Our content strategy includes creating pillar pages, blogs, and resources that resonate with your audience.',
+      'We build high-quality backlinks with reputable publications to enhance your domain authority.',
+      'Our ongoing optimization includes monthly reviews, leveraging analytics insights for continuous improvement.'
     ]
   },
   social: {
     title: 'Social Media Mastery',
     paragraphs: [
-      'Platform analysis (Facebook, Instagram, LinkedIn) to target your ideal customers.',
-      'Custom content calendar with compelling visuals and copy.',
-      'Engagement strategies: story polls, quizzes, user-generated campaigns.',
-      'Ad retargeting to convert engaged users.',
-      'In-depth analytics: reach, engagement, follower growth & ROI.'
+      'Social media is more than just a platform; it’s a conversation. We help you join the dialogue in a way that feels authentic and impactful.',
+      'We analyze your ideal customers across platforms like Facebook, Instagram, and LinkedIn, ensuring your message reaches the right ears.',
+      'Our custom content calendar is a roadmap to engagement, filled with visuals and copy that captivate and inspire.',
+      'Engagement strategies are not just tactics; they’re opportunities to build genuine connections. Polls, quizzes, and user-generated content bring your audience closer.',
+      'Ad retargeting is about turning interest into action. We convert engaged users into loyal advocates.',
+      'In-depth analytics are our compass, guiding us through the metrics of reach, engagement, follower growth, and ROI.'
     ]
   },
   ppc: {
     title: 'Google Ads (PPC) Campaign',
     paragraphs: [
-      'Keyword research with negative keyword filtering for relevancy and efficiency.',
-      'Smart bidding strategies (CPA, ROAS) to maximize ROI.',
-      'Ad copy testing & optimization to improve Quality Scores.',
-      'Conversion tracking and landing page performance upgrades.',
-      'Weekly budget pacing and performance reporting.'
+      'In the competitive landscape of online advertising, our PPC campaigns are designed to make every click count.',
+      'Keyword research is the foundation of our strategy. We filter out the noise to focus on terms that truly matter.',
+      'Smart bidding strategies are our secret weapon. We maximize ROI with precision, ensuring every budget is well-spent.',
+      'Ad copy testing is an art. We optimize to improve Quality Scores, making your ads stand out in a crowded field.',
+      'Conversion tracking and landing page performance upgrades are our ongoing commitment to excellence.',
+      'Weekly budget pacing and performance reporting keep you in the loop, ensuring transparency and control.'
     ]
   },
   branding: {
     title: 'Brand Strategy Development',
     paragraphs: [
-      'Brand discovery workshop to define your mission, voice & tone.',
-      'Visual identity creation: logo, color palette, typography.',
-      'Brand messaging guidelines for consistent communications.',
-      'Positioning strategy to differentiate in the marketplace.',
-      'Brand rollout across all touchpoints: digital, print, and social.'
+      'Your brand is your promise to the world. Our brand discovery workshop helps you define your mission, voice, and tone with clarity.',
+      'Visual identity is your brand’s face. We create logos, color palettes, and typography that reflect your essence.',
+      'Brand messaging guidelines ensure consistency across all communications, reinforcing your brand’s story.',
+      'Positioning strategy is about standing out. We help you carve a unique space in the marketplace.',
+      'Brand rollout is a celebration. We ensure your brand shines across digital, print, and social touchpoints.'
     ]
   },
   email: {
     title: 'Email Marketing Automation',
     paragraphs: [
-      'List segmentation based on behaviors, interests, and lifecycle stage.',
-      'Design & setup of automated workflows: welcome, nurture, cart abandonment.',
-      'Personalized & dynamic content for increased open and click-through rates.',
-      'A/B testing subject lines, content and send time for optimal performance.',
-      'Monthly deliverability monitoring, list hygiene and campaign reporting.'
+      'Email marketing is a direct line to your audience. Our list segmentation ensures your message reaches the right people at the right time.',
+      'Design and setup of automated workflows are our way of turning leads into loyal customers.',
+      'Personalized and dynamic content is the heartbeat of our email campaigns, driving open and click-through rates.',
+      'A/B testing is our method of continuous improvement. We optimize subject lines, content, and send times for peak performance.',
+      'Monthly deliverability monitoring, list hygiene, and campaign reporting keep your email strategy healthy and effective.'
     ]
   },
   web: {
     title: 'Web Development Package',
     paragraphs: [
-      'Responsive & SEO-friendly design tailored to your brand.',
-      'Fast loading, optimized images, lazy-loading and standard best practices.',
-      'CMS integration (WordPress, Webflow) for easy updates.',
-      'Conversion rate optimization: CTA placement, UX flows, tracking.',
-      'Quality testing across browsers & devices, with ongoing support.'
+      'Your website is your digital storefront. Our responsive and SEO-friendly design ensures it’s always open for business.',
+      'Fast loading times and optimized images are our commitment to a seamless user experience.',
+      'CMS integration gives you the power to update and manage your site with ease.',
+      'Conversion rate optimization is our focus. We place CTAs strategically and track UX flows for maximum impact.',
+      'Quality testing across browsers and devices ensures your site performs flawlessly, with ongoing support to keep it running smoothly.'
     ]
   },
   content: {
     title: 'Content Creation Suite',
     paragraphs: [
-      'Buyer persona-driven content planning and keyword mapping.',
-      'In-depth articles, guides, infographics & videos that captivate.',
-      'SEO optimization: internal linking, meta, schema tags.',
-      'Regular performance review & content refresh to stay current.',
-      'Custom distribution via newsletters & social media amplification.'
+      'Content is the bridge between you and your audience. Our buyer persona-driven planning ensures your message resonates deeply.',
+      'In-depth articles, guides, infographics, and videos are our tools for captivating and educating your audience.',
+      'SEO optimization is our way of making sure your content is found. Internal linking, meta tags, and schema tags enhance visibility.',
+      'Regular performance reviews and content refreshes keep your message current and relevant.',
+      'Custom distribution via newsletters and social media amplifies your voice, ensuring it’s heard.'
     ]
   },
   analytics: {
     title: 'Analytics & Reporting Framework',
     paragraphs: [
-      'Full audit of Google Analytics, Tag Manager, and tracking setup.',
-      'Custom dashboards showing KPIs: traffic, sessions, conversion, ROI.',
-      'Event tracking: forms, clicks, scroll-depth & micro-conversions.',
-      'Heatmaps & session recordings (Hotjar) for UX insights.',
-      'Monthly analysis & QBR for data-driven strategy shifts.'
+      'Data is the language of success. Our full audit of Google Analytics, Tag Manager, and tracking setup ensures you’re speaking it fluently.',
+      'Custom dashboards are our way of making data accessible. KPIs like traffic, sessions, conversion, and ROI are at your fingertips.',
+      'Event tracking gives you insights into user behavior. Forms, clicks, scroll-depth, and micro-conversions tell a story.',
+      'Heatmaps and session recordings provide a window into the user experience, guiding UX improvements.',
+      'Monthly analysis and QBRs ensure your strategy evolves with the data, staying agile and effective.'
     ]
   },
   app: {
     title: 'App Development Solution',
     paragraphs: [
-      'Requirements gathering and wireframes for iOS & Android.',
-      'UI/UX design following the latest material and iOS trends.',
-      'Backend integration with CMS, APIs, payments, push notifications.',
-      'App store optimization for better visibility & downloads.',
-      'Launch, bug fixes, tracking, and a roadmap for future updates.'
+      'In a mobile-first world, your app is your brand’s ambassador. Our requirements gathering and wireframes ensure it’s built with purpose.',
+      'UI/UX design follows the latest trends, ensuring your app feels modern and intuitive.',
+      'Backend integration with CMS, APIs, payments, and push notifications keeps your app connected and functional.',
+      'App store optimization is our way of making sure your app is found. Better visibility means more downloads.',
+      'Launch is just the beginning. Bug fixes, tracking, and a roadmap for future updates ensure your app’s success.'
     ]
   },
   ai: {
     title: 'AI Development Services',
     paragraphs: [
-      'AI use-case workshop: chatbots, data insights, automation workflows.',
-      'Model design & selection (GPT, custom NLP, predictive ML).',
-      'Prototype development and feedback loop integration.',
-      'System implementation & API integrations with existing tools.',
-      'Ongoing tuning, monitoring, and performance evaluation.'
+      'AI is the future, and we’re here to help you navigate it. Our AI use-case workshop explores chatbots, data insights, and automation workflows.',
+      'Model design and selection are tailored to your needs. Whether it’s GPT, custom NLP, or predictive ML, we find the right fit.',
+      'Prototype development and feedback loop integration ensure your AI solution evolves with your business.',
+      'System implementation and API integrations bring your AI vision to life, seamlessly integrating with existing tools.',
+      'Ongoing tuning, monitoring, and performance evaluation ensure your AI solution remains effective and efficient.'
     ]
   }
 };
 
 export default function StartCampaign() {
+  const detailRef = useRef(null);
   const [showSplash, setShowSplash] = useState(true);
 
   const [contactMethod, setContactMethod] = useState('');
@@ -162,6 +166,13 @@ export default function StartCampaign() {
   useEffect(() => {
   clickAudio.current = new Audio('/click.mp3');
 }, []);
+
+useEffect(() => {
+  if (selectedService && detailRef.current) {
+    detailRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}, [selectedService]);
+
 
 useEffect(() => {
   if (showSplash) {
@@ -227,12 +238,17 @@ useEffect(() => {
       {selectedService && (
         <>
           {/* Deep Dive */}
-          <section className={styles.detailDive}>
-            <h2>{SERVICE_DETAILS[selectedService].title}</h2>
-            {SERVICE_DETAILS[selectedService].paragraphs.map((p, i) => (
-              <p key={i} className={styles.detailPara}>{p}</p>
-            ))}
-          </section>
+<section className={styles.detailDive} ref={detailRef}>
+  <h2>{SERVICE_DETAILS[selectedService].title}</h2>
+  <div className={styles.detailCards}>
+    {SERVICE_DETAILS[selectedService].paragraphs.map((p, i) => (
+      <div key={i} className={styles.detailCard} style={{ animationDelay: `${i * 0.2}s` }}>
+        <div className={styles.detailCardIcon}>{SERVICES.find(s => s.key === selectedService).icon}</div>
+        <p>{p}</p>
+      </div>
+    ))}
+  </div>
+</section>
 
           {/* Contact Method */}
           <section className={styles.contactChoiceAnimated}>

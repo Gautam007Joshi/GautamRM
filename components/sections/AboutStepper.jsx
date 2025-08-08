@@ -95,29 +95,34 @@ const AboutStepper = () => {
   };
 
   return (
-    <Section>
+    <Section className={styles.aboutsteppersection}>
+
       <div className={styles.aboutWrapper}>
-        <div className={styles.left}>
-  <h2>{activeTab === 'about' ? 'About Us' : 'Why Choose Us'}</h2>
-  <div className={styles.subheadingMobile}>
-    <p>{activeTab === 'about' ? 'Know about our journey and values.' : 'See why clients choose us.'}</p>
+  <div className={styles.topRow}>
+    <div className={styles.left}>
+      <h2>{activeTab === 'about' ? 'About Us' : 'Why Choose Us'}</h2>
+      <div className={styles.subheadingMobile}>
+        <p>{activeTab === 'about' ? 'Know about our journey and values.' : 'See why clients choose us.'}</p>
+      </div>
+    </div>
+
+    <div className={styles.tabButtons}>
+      <button className={activeTab === 'about' ? styles.active : ''} onClick={() => setActiveTab('about')}>
+        About Us
+      </button>
+      <button className={activeTab === 'why' ? styles.active : ''} onClick={() => setActiveTab('why')}>
+        Why Choose Us
+      </button>
+    </div>
+  </div>
+
+  <div className={styles.right}>
+    <div className={styles.content}>
+      {renderContent()}
+    </div>
   </div>
 </div>
 
-        <div className={styles.right}>
-          <div className={styles.tabButtons}>
-            <button className={activeTab === 'about' ? styles.active : ''} onClick={() => setActiveTab('about')}>
-              About Us
-            </button>
-            <button className={activeTab === 'why' ? styles.active : ''} onClick={() => setActiveTab('why')}>
-              Why Choose Us
-            </button>
-          </div>
-          <div className={styles.content}>
-            {renderContent()}
-          </div>
-        </div>
-      </div>
     </Section>
   );
 };

@@ -2,14 +2,13 @@
 
 .main {
   position: relative;
-  min-height: 100vh;
+  min-height: auto;
+  flex: 1;
   background: linear-gradient(135deg, var(--ice) 0%, var(--white) 100%);
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
   margin-top: 60px;
-
-  /* 👇 Add this padding to make space below */
-  padding-bottom: 100px;
+  
 }
 
 /* Custom cursor */
@@ -235,5 +234,11 @@
   }
   .row {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .main {
+    margin-bottom: 200px ; /* Increase padding for mobile screens */
   }
 }

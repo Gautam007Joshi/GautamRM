@@ -78,6 +78,7 @@
   flex-direction: column;
   gap: var(--gap);
   scroll-behavior: smooth;
+  overscroll-behavior: contain;
 }
 
 .message {

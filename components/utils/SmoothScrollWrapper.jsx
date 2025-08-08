@@ -3,19 +3,27 @@
 import { useEffect, useRef } from 'react';
 import Lenis from '@studio-freight/lenis';
 
+let globalLenis = null; // 🔁 Global instance to access anywhere
+
+export function getLenis() {
+  return globalLenis;
+}
+
 export default function SmoothScroll({ children }) {
   const scrollRef = useRef(null);
 
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth easing
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smooth: true,
       direction: 'vertical',
       gestureDirection: 'vertical',
       smoothTouch: false,
       touchMultiplier: 2,
     });
+
+    globalLenis = lenis;
 
     function raf(time) {
       lenis.raf(time);
@@ -26,6 +34,7 @@ export default function SmoothScroll({ children }) {
 
     return () => {
       lenis.destroy();
+      globalLenis = null;
     };
   }, []);
 

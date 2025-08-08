@@ -68,9 +68,9 @@ export default function ContactForm() {
 
 
   return (
-    <Section bgColor="#f4f7fb" className={styles.contactFormSection} disableOverlay>
-      <div className={styles.bgWrapper}>
-        <div className={styles.container}>
+    <Section className={styles.homecontactform} >
+      <div className={styles.bgWrapper } >
+        <div className={styles.container} >
           
           {/* ✅ LEFT COLUMN — Title Text (No change needed) */}
           <div className={styles.textBlock}>

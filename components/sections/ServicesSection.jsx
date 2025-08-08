@@ -90,7 +90,9 @@ export default function ServicesSection() {
   ];
 
   return (
-    <Section bgColor="white" title="" className="dark-section">
+   <Section className={styles.tallsection}>
+
+
       <div id="services" className={styles.servicesSection}>
         <h2 className={styles.heading}>
           Elevate Your <span className={styles.highlight}>Digital</span> Presence.
@@ -156,7 +158,10 @@ export default function ServicesSection() {
             Let’s Talk →
           </Link>
         </div>
+
+        
       </div>
+
     </Section>
   );
 }
