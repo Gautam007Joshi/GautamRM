@@ -1,5 +1,5 @@
 .homecontactform{
-  margin-top: -100px;
+  margin-top: -380px;
 }
 
 /* 🌐 Background Section */
@@ -200,6 +200,10 @@
   .contactForm {
     margin-left: -23px;
   }
+
+  .homecontactform{
+  margin-top: -80px;
+}
 }
 
 /* ✅ Left-shift only the form on larger screens */

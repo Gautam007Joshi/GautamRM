@@ -22,13 +22,13 @@ const Section = forwardRef(
       // Animation for the card moving up
       const tl = gsap.fromTo(
         card,
-        { y: 300 },
+        { y: 400 },
         {
           y: -200,
           ease: 'power1.out',
           scrollTrigger: {
             trigger: section,
-            start: 'top 100%',
+            start: 'top 60%',
             end: 'top 10%',
             scrub: true,
           },

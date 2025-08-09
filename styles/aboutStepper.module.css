@@ -403,6 +403,10 @@
 
 /* On smaller screens: stack vertically */
 @media (max-width: 768px) {
+
+  .aboutsteppersection{
+    margin-top: -400px;
+  }
   .topRow {
     flex-direction: column;
     align-items: center;
