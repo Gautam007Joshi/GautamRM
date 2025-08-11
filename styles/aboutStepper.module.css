@@ -1,3 +1,8 @@
+.aboutsteppersection {
+  height: 160vh !important;        /* let content decide */
+  padding: 2rem 0;
+}
+
 .aboutWrapper {
   /* layout (unchanged) */
   display: flex;
@@ -183,6 +188,97 @@
 .section {
   padding-bottom: 2rem;
 }
+/* ===== Marquee container ===== */
+
+.trustedTitle {
+  text-align: center;
+  font-size: 2.4rem;           /* scale down on mobile in the next rule */
+  font-weight: 700;
+  color: #0e82ac;              /* your brand teal */
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* quick mobile tweak */
+@media (max-width: 480px) {
+  .trustedTitle {
+    font-size: 1.8rem;
+  }
+}
+.trustedBy {
+  position: relative;
+  margin-top: 80px;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bgText {
+  position: absolute;
+  font-size: 4rem;
+  font-weight: 800;
+  color: #e5e5e5;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  user-select: none;
+  z-index: 1;
+}
+
+/* ===== Moving strip ===== */
+.marqueeBox {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.marqueeStrip {
+  display: flex;
+  flex-direction: column;   /* stack rows vertically */
+  animation: scrollUp 30s linear infinite;
+  will-change: transform;
+  gap: 9rem !important;
+}
+
+/* One row = 4 logos */
+.logoRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.logoBox {
+  flex: 0 0 22%;            /* 4 per row */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoBox img {
+  max-height: 50px;
+  max-width: 90%;
+  object-fit: contain;
+}
+
+/* ===== keyframes ===== */
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    /* move exactly the height of first set (4 rows) */
+    transform: translateY(-100%);
+  }
+}
 
 /* Responsive styles */
 @media (max-width: 1200px) {
@@ -348,6 +444,8 @@
   .aboutsteppersection{
   height: 220vh !important;
 }
+
+
   .topRow {
     flex-direction: row;
     justify-content: space-between;
@@ -399,6 +497,10 @@
 .aboutText{
   margin-top: -50px
 }
+
+.bgText {
+  margin-top: 100px;
+}
 }
 
 /* On smaller screens: stack vertically */
@@ -406,6 +508,7 @@
 
   .aboutsteppersection{
     margin-top: -400px;
+    height: auto !important;
   }
   .topRow {
     flex-direction: column;
@@ -436,6 +539,10 @@
 
 .overlayImage:hover {
   transform: scale(1.05);
+}
+
+.bgText {
+  margin-top: 100px;
 }
 }
 

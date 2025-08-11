@@ -95,7 +95,7 @@ const AboutStepper = () => {
   };
 
   return (
-    <Section className={styles.aboutsteppersection}>
+    <Section className={styles.aboutsteppersection} disableOverlay>
 
       <div className={styles.aboutWrapper}>
   <div className={styles.topRow}>
@@ -119,6 +119,69 @@ const AboutStepper = () => {
   <div className={styles.right}>
     <div className={styles.content}>
       {renderContent()}
+    </div>
+  </div>
+</div>
+
+{/* ... existing JSX ... */}
+
+   <div className={styles.trustedBy}>
+    <h2 className={styles.trustedTitle}>Trusted By</h2>
+  <div className={styles.bgText}>OUR CLIENTS</div>
+
+  <div className={styles.marqueeBox}>
+    <div className={styles.marqueeStrip}>
+      {/* SET 1 */}
+      <div className={styles.logoRow}>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" /></div>
+      </div>
+      <div className={styles.logoRow}>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Spotify_logo_without_text.svg" alt="Spotify" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Logo_of_YouTube_%282015-2017%29.svg" alt="YouTube" /></div>
+      </div>
+      <div className={styles.logoRow}>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" /></div>
+      </div>
+      <div className={styles.logoRow}>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Spotify_logo_without_text.svg" alt="Spotify" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Logo_of_YouTube_%282015-2017%29.svg" alt="YouTube" /></div>
+      </div>
+
+      {/* SET 2 (exact duplicate of SET 1) */}
+      <div className={styles.logoRow}>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" /></div>
+      </div>
+      <div className={styles.logoRow}>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Spotify_logo_without_text.svg" alt="Spotify" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Logo_of_YouTube_%282015-2017%29.svg" alt="YouTube" /></div>
+      </div>
+      <div className={styles.logoRow}>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" /></div>
+      </div>
+      <div className={styles.logoRow}>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Spotify_logo_without_text.svg" alt="Spotify" /></div>
+        <div className={styles.logoBox}><img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Logo_of_YouTube_%282015-2017%29.svg" alt="YouTube" /></div>
+      </div>
     </div>
   </div>
 </div>

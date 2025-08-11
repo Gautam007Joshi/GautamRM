@@ -254,6 +254,11 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
+  .cardWrapper {
+    aspect-ratio: auto;
+    height: auto;
+  }
+
   .card {
     padding: 1rem;
     aspect-ratio: 1 / 1;
@@ -329,9 +334,9 @@
     margin-bottom: 0 !important;
   }
 
-  .tallsection{
-    height: 250vh !important;
-    margin-top: -450px !important;
+  .tallsection {
+    height: auto !important;
+    margin-top: 0 !important;
   }
 }
 

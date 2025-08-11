@@ -71,13 +71,29 @@ export default function ContactPage() {
 
   /* Form submit */
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Sending …");
-    await new Promise((r) => setTimeout(r, 1500));
-    setStatus("Sent ✓");
-    formRef.current.reset();
-    setTimeout(() => setStatus(""), 3000);
-  };
+  e.preventDefault();
+  setStatus("Sending …");
+
+  const body = Object.fromEntries(new FormData(e.target));
+
+  try {
+    const r = await fetch("/api/contactPage", {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: { "Content-Type": "application/json" },
+    });
+    const data = await r.json();
+    if (data.ok) {
+      setStatus("Sent ✓");
+      formRef.current.reset();
+      setTimeout(() => setStatus(""), 3000);
+    } else {
+      setStatus("Failed – please retry");
+    }
+  } catch {
+    setStatus("Failed – please retry");
+  }
+};
 
   return (
     <>

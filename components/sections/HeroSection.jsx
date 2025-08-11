@@ -8,14 +8,11 @@ import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import { useRouter } from 'next/navigation';
 
-
-// Dynamically import the 3D logo model
-const LogoModel = dynamic(() => import('@/components/utils/LogoModel'), { ssr: false });
-
 export default function HeroSection() {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [floatItems, setFloatItems] = useState([]);
-
+  const [sentFlash, setSentFlash] = useState(false);
+  
 
 const router = useRouter();
 
@@ -35,6 +32,38 @@ const router = useRouter();
     }));
     setFloatItems(generated);
   }, []);
+
+  const [url, setUrl] = useState("");
+const [email, setEmail] = useState("");
+const [phone, setPhone] = useState("");
+const [loading, setLoading] = useState(false);
+const [auditResult, setAuditResult] = useState(null);
+
+async function handleAuditSubmit(e) {
+  e.preventDefault();
+  setLoading(true);
+  setSentFlash(false);            // reset if user clicks again
+
+  try {
+    const res = await fetch("/api/audit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url, email, phone }),
+    });
+
+    const data = await res.json();
+    setAuditResult(data.scores || null);
+
+    // success flash
+    setLoading(false);
+    setSentFlash(true);
+    setTimeout(() => setSentFlash(false), 3000);
+  } catch (err) {
+    console.error(err);
+    setLoading(false);
+  }
+}
+
 
   return (
     <section className={`${styles.heroWrap} heroWrap`}>
@@ -137,29 +166,48 @@ const router = useRouter();
         
 
 <div className={styles.auditFormSection}>
-  <form className={styles.auditFormHorizontal}>
-    <input
-      type="url"
-      placeholder="Website URL"
-      className={styles.auditInputH}
-      required
-    />
-    <input
-      type="email"
-      placeholder="Email"
-      className={styles.auditInputH}
-      required
-    />
-    <input
-      type="tel"
-      placeholder="Phone Number"
-      className={styles.auditInputH}
-      required
-    />
-    <button type="submit" className={styles.auditButtonH}>
-      Get Free Audit 🚀
-    </button>
-  </form>
+  <form
+  className={styles.auditFormHorizontal}
+  onSubmit={handleAuditSubmit}
+>
+  <input
+    type="url"
+    placeholder="Website URL"
+    className={styles.auditInputH}
+    value={url}
+    onChange={(e) => setUrl(e.target.value)}
+    required
+  />
+  <input
+    type="email"
+    placeholder="Email"
+    className={styles.auditInputH}
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    required
+  />
+  <input
+    type="tel"
+    placeholder="Phone Number"
+    className={styles.auditInputH}
+    value={phone}
+    onChange={(e) => setPhone(e.target.value)}
+    required
+  />
+  <button type="submit" className={styles.auditButtonH} disabled={loading || sentFlash}>
+  {loading ? (
+    <>
+      Auditing
+      <span className={styles.spinner} />
+    </>
+  ) : sentFlash ? (
+    "Sent ✓"
+  ) : (
+    "Get Free Audit 🚀"
+  )}
+</button>
+</form>
+
 </div>
  <div className={styles.blankSpace}></div>
       </div>
