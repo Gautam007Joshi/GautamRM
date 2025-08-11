@@ -156,6 +156,7 @@ export default function StartCampaign() {
 
 
   const handleCall = () => window.open('tel:+919269529252');
+const [sending, setSending] = useState(false);
 
   useEffect(() => {
     if (formRef.current) {
@@ -267,60 +268,78 @@ useEffect(() => {
 
           {/* Email Form */}
           {contactMethod === 'email' && (
-            <form className={styles.premiumForm} ref={formRef}>
-              <div className={styles.formGroup}>
-                <label>🌐 Website URL</label>
-                <input type="url" name="url" required />
-              </div>
-              <div className={styles.formGroup}>
-                <label>📩 Email</label>
-                <input type="email" name="email" required />
-              </div>
-              <div className={`${styles.formGroup} ${styles.phoneGroup}`}>
-                <label>📞 Phone</label>
-                <div className={styles.phoneWrapper}>
-                  <select name="countryCode" className={styles.countryCode}>
-                    <option value="+91">🇮🇳 India (+91)</option>
-    <option value="+1">🇺🇸 United States (+1)</option>
-    <option value="+44">🇬🇧 United Kingdom (+44)</option>
-    <option value="+61">🇦🇺 Australia (+61)</option>
-    <option value="+81">🇯🇵 Japan (+81)</option>
-    <option value="+49">🇩🇪 Germany (+49)</option>
-    <option value="+33">🇫🇷 France (+33)</option>
-    <option value="+971">🇦🇪 UAE (+971)</option>
-    <option value="+65">🇸🇬 Singapore (+65)</option>
-    <option value="+86">🇨🇳 China (+86)</option>
-    <option value="+880">🇧🇩 Bangladesh (+880)</option>
-    <option value="+92">🇵🇰 Pakistan (+92)</option>
-    <option value="+7">🇷🇺 Russia (+7)</option>
-    <option value="+34">🇪🇸 Spain (+34)</option>
-    <option value="+39">🇮🇹 Italy (+39)</option>
-    <option value="+55">🇧🇷 Brazil (+55)</option>
-    <option value="+20">🇪🇬 Egypt (+20)</option>
-    <option value="+60">🇲🇾 Malaysia (+60)</option>
-    <option value="+82">🇰🇷 South Korea (+82)</option>
-    <option value="+62">🇮🇩 Indonesia (+62)</option>
-    <option value="+351">🇵🇹 Portugal (+351)</option>
-    <option value="+90">🇹🇷 Turkey (+90)</option>
-    <option value="+48">🇵🇱 Poland (+48)</option>
-    <option value="+31">🇳🇱 Netherlands (+31)</option>
-    <option value="+46">🇸🇪 Sweden (+46)</option>
-    <option value="+358">🇫🇮 Finland (+358)</option>
-    <option value="+98">🇮🇷 Iran (+98)</option>
-    <option value="+66">🇹🇭 Thailand (+66)</option>
-    <option value="+254">🇰🇪 Kenya (+254)</option>
-    <option value="+27">🇿🇦 South Africa (+27)</option>
-                  </select>
-                  <input type="tel" name="phone" required />
-                </div>
-              </div>
-              <div className={styles.formGroup}>
-                <label>📈 Campaign Goal</label>
-                <textarea name="goal" rows="3" required placeholder="e.g., Increase leads by 50%" />
-              </div>
-              <button type="submit" className={styles.glowSubmitBtn}>Launch My {SERVICES.find(s => s.key === selectedService).title}</button>
-            </form>
-          )}
+  <form
+    className={styles.premiumForm}
+    ref={formRef}
+    onSubmit={async (e) => {
+  e.preventDefault();
+  if (sending) return;
+
+  const fd = new FormData(e.target);
+  const payload = {
+    url: fd.get('url'),
+    email: fd.get('email'),
+    countryCode: fd.get('countryCode'),
+    phone: fd.get('phone'),
+    goal: fd.get('goal'),
+    service: SERVICES.find(s => s.key === selectedService)?.title || 'N/A',
+  };
+
+  setSending(true);
+  try {
+    const res = await fetch('/api/campaign', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    const data = await res.json();
+    if (data.success) {
+      alert('Thank you! We’ve received your campaign request.');
+      setContactMethod('');
+      e.target.reset();
+    } else {
+      alert('Something went wrong. Please try again.');
+    }
+  } catch {
+    alert('Network error. Please try again.');
+  } finally {
+    setSending(false);
+  }
+}}
+  >
+    {/* same inputs as before */}
+    <div className={styles.formGroup}>
+      <label>🌐 Website URL</label>
+      <input type="url" name="url" required />
+    </div>
+    <div className={styles.formGroup}>
+      <label>📩 Email</label>
+      <input type="email" name="email" required />
+    </div>
+    <div className={`${styles.formGroup} ${styles.phoneGroup}`}>
+      <label>📞 Phone</label>
+      <div className={styles.phoneWrapper}>
+        <select name="countryCode" className={styles.countryCode} required>
+          <option value="+91">🇮🇳 India (+91)</option>
+          <option value="+1">🇺🇸 United States (+1)</option>
+          {/* …more… */}
+        </select>
+        <input type="tel" name="phone" required />
+      </div>
+    </div>
+    <div className={styles.formGroup}>
+      <label>📈 Campaign Goal</label>
+      <textarea name="goal" rows="3" required placeholder="e.g., Increase leads by 50%" />
+    </div>
+    <button
+  type="submit"
+  className={`${styles.glowSubmitBtn} ${sending ? styles.loadingDots : ''}`}
+  disabled={sending}
+>
+  {sending ? 'Launching' : `Launch My ${SERVICES.find(s => s.key === selectedService)?.title}`}
+</button>
+  </form>
+)}
 
           {/* FAQs */}
           <section className={styles.faqSection}>
