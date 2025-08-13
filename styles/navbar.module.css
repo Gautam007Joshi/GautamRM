@@ -171,6 +171,11 @@
   }
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .megaDropdownWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -391,7 +396,7 @@
 }
 
 .contactHeader h4 {
-  color: #5e60ff;
+  color: #0e82ac;
   margin-bottom: 0;
 }
 
@@ -402,12 +407,30 @@
 
 .closeButton {
   position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 22px;
-  background: 0 0;
+  top: 36px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
   border: none;
+  border-radius: 50%;
+  background: #e2e8f0;           /* subtle gray */
+  color: #475569;                /* muted charcoal */
+  font-size: 25px;
+  line-height: 1;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.closeButton:hover {
+  background: #0e82ac;           /* soft red */
+  color: #fff;
+}
+
+.closeButton:active {
+  transform: scale(0.9);
 }
 
 .contactForm {
@@ -466,7 +489,7 @@
 .contactHeader h4 {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #1046a4;
+  color: #0e82ac;
   margin-bottom: 10px;
 }
 
@@ -476,16 +499,6 @@
   font-size: .95rem;
 }
 
-.closeButton {
-  position: absolute;
-  top: 18px;
-  right: 20px;
-  font-size: 1.5rem;
-  background: 0 0;
-  border: none;
-  cursor: pointer;
-  color: #333;
-}
 
 .contactForm {
   margin-top: -25px;
@@ -519,7 +532,7 @@
 }
 
 .contactForm button {
-  background: linear-gradient(to right, #297cf0, #195fd4);
+  background: linear-gradient(to right, #22a5d4, #0b5e7c);
   color: #fff;
   padding: 16px;
   font-size: 1.05rem;
@@ -531,7 +544,7 @@
 }
 
 .contactForm button:hover {
-  background: linear-gradient(to right, #195fd4, #297cf0);
+  background: linear-gradient(to right, #0b5e7c, #22a5d4);
   transform: translateY(-2px);
 }
 

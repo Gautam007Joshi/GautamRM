@@ -40,7 +40,6 @@ const menuItems = [
       ],
     },
   },
-  { label: 'Projects', icon: <FaLaptopCode />, path: '/projects' },
   { label: 'Blog', icon: <FaPenFancy />, path: '/blog' },
   { label: 'Contact', icon: <FaPaperPlane />, path: '/contact' },
 ];
@@ -244,6 +243,7 @@ export default function Navbar() {
 
       {/* Contact Slide-in Panel */}
 {/* Contact Slide-in Panel */}
+{/* Contact Slide-in Panel */}
 <div className={`${styles.contactPanel} ${showContactForm ? styles.open : ''}`} data-lenis-prevent>
   <div className={styles.contactHeader}>
     <h4>Let’s Connect</h4>
@@ -251,41 +251,96 @@ export default function Navbar() {
     <button className={styles.closeButton} onClick={() => setShowContactForm(false)}>×</button>
   </div>
 
-  <div style={{ marginTop: '20px' }} /> {/* gap between header and form */}
+  <div style={{ marginTop: 20 }} />
 
-  <form className={styles.contactForm}>
-    <input type="text" placeholder="Enter your full name" />
-    <input type="email" placeholder="Enter your email address" />
-    <input type="tel" placeholder="Enter your phone number" />
-    <select>
-      <option>Please Select Your Service</option>
-      <option>SEO</option>
-      <option>Social Media</option>
-      <option>Web Development</option>
-    </select>
-    <textarea placeholder="How may we help you?" />
-    <button type="submit">Submit</button>
-  </form>
+  {/* ------------- FORM ------------- */}
+  {(() => {
+    const [status, setStatus] = React.useState('idle');
 
-  <div className={styles.socialContact}>
-  <a
-    href="https://wa.me/919269529252?text=Hi%2C%20I%20would%20like%20to%20know%20more"
-    className={styles.whatsapp}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <FaWhatsapp /> WhatsApp
-  </a>
+    async function handleSubmit(e) {
+      e.preventDefault();
+      setStatus('loading');
+      const fd = new FormData(e.currentTarget);
+      const payload = Object.fromEntries(fd.entries());
 
-  <a
-    href="https://instagram.com/rankersmind"
-    className={styles.instagram}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <FaInstagram /> Instagram
-  </a>
-</div>
+      try {
+        await fetch('/api/letsTalkForm', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        setStatus('sent');
+        setTimeout(() => {
+          setStatus('idle');
+          e.currentTarget.reset();
+        }, 4000);
+      } catch {
+        setStatus('idle');
+      }
+    }
+
+    return (
+      <form className={styles.contactForm} onSubmit={handleSubmit}>
+        <input name="fullname" type="text" placeholder="Enter your full name" required />
+        <input name="email" type="email" placeholder="Enter your email address" required />
+        <input name="phone" type="tel" placeholder="Enter your phone number" />
+        <select name="service" required>
+          <option value="">Please Select Your Service</option>
+          <option>SEO</option>
+          <option>Social Media</option>
+          <option>Web Development</option>
+          <option>App Development</option>
+          <option>AI Development</option>
+          <option>Google Ads</option>
+          <option>Email Marketing</option>
+          <option>Brand Strategy</option>
+          <option>Content Creation</option>
+          <option>Analytics and Reporting</option>
+        </select>
+        <textarea name="message" placeholder="How may we help you?" required />
+
+        <button
+          type="submit"
+          disabled={status === 'loading'}
+          className={styles.submitBtn}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, minWidth: 110 }}
+        >
+          {status === 'loading' && (
+            <svg
+              style={{ animation: 'spin 1s linear infinite' }}
+              width={16}
+              height={16}
+              viewBox="0 0 24 24"
+            >
+              <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" opacity=".25" />
+              <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+            </svg>
+          )}
+          {status === 'loading' ? 'Sending…' : status === 'sent' ? 'Submitted ✓' : 'Submit'}
+        </button>
+      </form>
+    );
+  })()}
+  {/* ------------- /FORM ------------- */}
+
+  <div className={styles.socialContact} style={{ marginTop: 24 }}>
+    <a
+      href="https://wa.me/919269529252?text=Hi%2C%20I%20would%20like%20to%20know%20more"
+      className={styles.whatsapp}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <FaWhatsapp /> WhatsApp
+    </a>
+    <a
+      href="https://instagram.com/rankersmind"
+      className={styles.instagram}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <FaInstagram /> Instagram
+    </a>
+  </div>
 </div>
 
 
