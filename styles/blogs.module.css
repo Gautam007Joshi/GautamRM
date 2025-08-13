@@ -90,6 +90,8 @@
 
 /* 📰 Blog Card */
 .blogCard {
+  text-decoration: none;
+  color: inherit;
   flex: 0 0 320px;
   background: #fff;
   border-radius: 1rem;

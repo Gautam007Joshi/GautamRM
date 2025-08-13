@@ -615,6 +615,11 @@
 }
 
 @media (max-width: 980px) {
+  .closeButton{
+    position: absolute !important;
+  top: 23px !important;
+  right: 0 !important;
+  }
   .sidebarLogo {
     display: flex;
     justify-content: end;

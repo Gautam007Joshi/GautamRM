@@ -73,19 +73,23 @@ const scrollRight = () => {
   <div className={styles.blogScrollContainer}>
     <div className={styles.blogScrollWrapper} ref={scrollRef}>
       {blogPosts.slice(0, 5).map((post, index) => (
-        <div key={index} className={styles.blogCard}>
-          <img
-            src={post.coverImage || 'https://via.placeholder.com/400x250'}
-            alt={post.title}
-            className={styles.blogImage}
-          />
-          <div className={styles.blogContent}>
-            <h3>{post.title}</h3>
-            <p>{post.description}</p>
-            <a href={`/blog/${post.slug}`} className={styles.readMore}>Read More →</a>
-          </div>
-        </div>
-      ))}
+  <a
+    key={index}
+    href={`/blog/${post.slug}`}
+    className={styles.blogCard}   /* keeps all existing styling */
+  >
+    <img
+      src={post.coverImage || 'https://via.placeholder.com/400x250'}
+      alt={post.title}
+      className={styles.blogImage}
+    />
+    <div className={styles.blogContent}>
+      <h3>{post.title}</h3>
+      <p>{post.description}</p>
+      <span className={styles.readMore}>Read More →</span>
+    </div>
+  </a>
+))}
     </div>
   </div>
 
