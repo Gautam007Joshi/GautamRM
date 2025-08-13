@@ -205,26 +205,27 @@ export default function ChatBot() {
   const handleFeedback = (feedback) => {
     addUserMessage(feedback);
 
-    setTimeout(() => {
-      if (feedback === 'Not Useful') {
-        addBotMessage(
-          <>
-            No problem—let’s connect directly.{' '}
-            <a
-              className={styles.link}
-              href="https://wa.me/919269529252"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Chat with our team on WhatsApp
-            </a>
-            .
-          </>
-        );
-      } else {
-        addBotMessage('Glad I could help!');
-      }
-    }, 300);
+          setTimeout(() => {
+        if (feedback === 'Not Useful') {
+          addBotMessage(
+            <>
+              No problem—let’s connect directly.{' '}
+              <a
+                className={styles.link}
+                href="https://wa.me/919269529252"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Chat with our team on WhatsApp
+              </a>
+              .
+            </>,
+            ['Main Menu']
+          );
+        } else {
+          addBotMessage('Glad I could help!');
+        }
+      }, 300);
   };
 
   const handleCustomQuestionSubmit = () => {
