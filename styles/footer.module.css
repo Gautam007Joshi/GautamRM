@@ -3,7 +3,7 @@
   color: #d1d5db;
   padding: 60px 40px 30px;
   font-family: 'Segoe UI', sans-serif;
-  margin-top: 0px;
+  margin-top: 0 !important;
 }
 
 .top {

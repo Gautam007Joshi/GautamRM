@@ -161,7 +161,6 @@
 }
 
 @media (max-width: 768px) {
-
   
   .carouselWrapper {
     position: relative;
@@ -254,7 +253,7 @@
 @media (max-width: 768px){
   .homeblogsection{
     margin-top: -400px;
-    height: 100vh !important;
+    height: 120vh !important;
   }
 }
 

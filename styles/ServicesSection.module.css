@@ -336,7 +336,7 @@
 
   .tallsection {
     height: auto !important;
-    margin-top: 0 !important;
+    margin-top: -150px !important;
   }
 }
 

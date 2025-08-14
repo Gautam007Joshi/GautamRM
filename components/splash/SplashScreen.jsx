@@ -19,19 +19,19 @@ export default function SplashScreen({ text = 'Welcome', onComplete = () => {} }
     });
 
     tl.fromTo(
-      textRef.current,
-      { opacity: 0, scale: 0.96, y: 20 },
-      { opacity: 1, scale: 1, y: 0, duration: 1.2, ease: 'power4.out' },
-      0
-    ).to(
-      splashRef.current,
-      {
-        y: '-100%',
-        duration: 1.4,
-        ease: 'expo.inOut',
-      },
-      '+=0.5'
-    );
+  textRef.current,
+  { opacity: 0, scale: 0.96, y: 20 },
+  { opacity: 1, scale: 1, y: 0, duration: 1.2, ease: 'power4.out' },
+  0
+).to(
+  splashRef.current,
+  {
+    y: '-100%',
+    duration: 1.4,
+    ease: 'expo.inOut',
+  },
+  '>' // <- starts immediately after previous tween
+);
   }, [onComplete]);
 
   return (

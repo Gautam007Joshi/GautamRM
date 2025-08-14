@@ -19,22 +19,23 @@ const Section = forwardRef(
 
       if (!section || !card) return;
 
+      const distance = window.innerHeight * 0.35;
+
       // Animation for the card moving up
       const tl = gsap.fromTo(
-        card,
-        { y: 400 },
-        {
-          y: -200,
-          ease: 'power1.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 60%',
-            end: 'top 10%',
-            scrub: true,
-          },
-        }
-      );
-
+    card,
+    { y:  distance },
+    {
+      y: -distance * 0.4,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: section,
+        start: 'top 80%',   // start earlier
+        end:   'top 20%',   // finish earlier
+        scrub: 1.2,         // soft inertia
+      },
+    }
+  );
       // ScrollTrigger for the dark overlay effect
       let overlayTrigger;
 

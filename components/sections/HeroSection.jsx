@@ -3,10 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import styles from '@/styles/HeroSection.module.css';
 import { ArrowRight, Play, BarChart3, Users, Target } from 'lucide-react';
-import dynamic from 'next/dynamic';
-import { Canvas } from '@react-three/fiber';
-import { Suspense } from 'react';
 import { useRouter } from 'next/navigation';
+
 
 export default function HeroSection() {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
@@ -209,7 +207,6 @@ async function handleAuditSubmit(e) {
 </form>
 
 </div>
- <div className={styles.blankSpace}></div>
       </div>
      
 
