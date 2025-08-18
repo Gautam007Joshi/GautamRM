@@ -19,34 +19,36 @@ const Section = forwardRef(
 
       if (!section || !card) return;
 
-      const distance = window.innerHeight * 0.35;
+      // Increase distance for stronger upward movement
+      const distance = window.innerHeight * 0.5;
 
       // Animation for the card moving up
       const tl = gsap.fromTo(
-    card,
-    { y:  distance },
-    {
-      y: -distance * 0.4,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: section,
-        start: 'top 80%',   // start earlier
-        end:   'top 20%',   // finish earlier
-        scrub: 1.2,         // soft inertia
-      },
-    }
-  );
+        card,
+        { y: distance },
+        {
+          y: -distance * 0.5, // more upward movement
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 95%',   // animation starts earlier
+            end: 'top 10%',     // animation ends sooner for stronger effect
+            scrub: 1.2,
+          },
+        }
+      );
+
       // ScrollTrigger for the dark overlay effect
       let overlayTrigger;
 
       if (!disableOverlay && nextSection) {
         overlayTrigger = ScrollTrigger.create({
           trigger: nextSection,
-          start: 'top 40%',
-          end: 'top 10%',
+          start: 'top 50%',  // overlay starts earlier
+          end: 'top 0%',     // overlay ends at top of viewport
           scrub: true,
           onUpdate: (self) => {
-            const opacity = self.progress * 0.6; // Adjust the multiplier as needed
+            const opacity = self.progress * 0.6; // adjust overlay intensity
             card.style.setProperty('--overlay-opacity', opacity.toFixed(2));
           },
         });
