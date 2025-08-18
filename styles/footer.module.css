@@ -3,7 +3,7 @@
   color: #d1d5db;
   padding: 60px 40px 30px;
   font-family: 'Segoe UI', sans-serif;
-  margin-top: 0 !important;
+  margin-top: 300px !important;
 }
 
 .top {
@@ -251,9 +251,9 @@
 }
 
 /* Mobile */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .footer {
-    margin-top: -250px;
+    margin-top: -150px !important;
   }
   .bottomBar {
     flex-direction: column;

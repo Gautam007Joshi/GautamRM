@@ -1,6 +1,10 @@
+/* Default desktop/tall version */
 .tallsection {
-  height: 180vh !important;
+  min-height: 70vh;    /* at least one screen tall */
+  height: auto !important; /* let content decide */
+  padding: 0;      /* breathing space */
 }
+
 
 
 .servicesSection {
@@ -341,17 +345,19 @@
 }
 
 @media (min-width: 800px) and (max-width: 1126px) {
-  .tallsection{
-    height: 250vh !important;
+  .tallsection {
+    min-height: 50vh;
+    height: auto !important;
+    padding-bottom: 1rem; /* instead of 250vh */
   }
 }
 
 @media (min-width: 1127px) and (max-width: 1300px) {
 
-  .servicesSection {
-    padding: 5rem 3rem; /* Adds 3rem left & right padding */
-    
-    
+  .tallsection {
+    min-height: 100vh;
+    height: auto !important;
+    padding-bottom: 1rem; /* instead of 180vh/250vh */
   }
   .servicesGrid {
     grid-template-columns: repeat(5, 1fr); /* force 5 cards per row */

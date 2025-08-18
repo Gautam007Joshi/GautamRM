@@ -1,0 +1,7 @@
+
+
+@media (min-width: 800px) and (max-width: 1440px) {
+  .footerLaptopMargin {
+    margin-top: 320px !important;
+  }
+}

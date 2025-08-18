@@ -1,8 +1,8 @@
-.blogsThemeSection {
-  position: relative;
+.homeblogsection {
+    height: auto !important; /* let content decide height */
+    min-height: 100vh;       /* at least full screen */
+  }
 
-
-}
 
 /* 🌐 Section Styling */
 .blogSection {
@@ -252,8 +252,10 @@
 
 @media (max-width: 768px){
   .homeblogsection{
-    margin-top: -400px;
-    height: 120vh !important;
+    margin-top: -400px;  /* if you really need this offset */
+    min-height: 100vh;   /* fills at least one screen */
+    height: auto !important;  /* adapts to content */
+    padding-bottom: 4rem; /* gives breathing space instead of vh */
   }
 }
 
@@ -286,3 +288,4 @@
 .exploreButton:active {
   transform: translateY(0);
 }
+

@@ -1,7 +1,9 @@
 .aboutsteppersection {
-  height: 160vh !important;        /* let content decide */
-  padding: 2rem 0;
+  min-height: 100vh;   /* at least one full screen */
+  height: auto !important; /* grows with content */
+  padding: 1rem 0;     /* breathing room */
 }
+
 
 .aboutWrapper {
   /* layout (unchanged) */
@@ -442,9 +444,10 @@
 /* For screen width between 769px and 1200px */
 @media (min-width: 769px) and (max-width: 1200px) {
 
-  .aboutsteppersection{
-  height: 220vh !important;
-}
+  .aboutsteppersection {
+    min-height: 70vh;  /* ensures section is at least one screen tall */
+    height: auto;       /* grows based on content */
+  }
 
 
   .topRow {

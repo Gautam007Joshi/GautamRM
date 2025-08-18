@@ -11,6 +11,7 @@ import BlogsServer from '@/components/sections/BlogsServer';
 import ContactForm from '@/components/sections/ContactForm';
 import AOSClientWrapper from '@/components/sections/AOSClientWrapper';
 import SplashScreen from '@/components/splash/SplashScreen';
+import styles from '@/styles/home.module.css';
 
 export default function Home() {
   const contactRef = useRef(null);
@@ -69,16 +70,13 @@ export default function Home() {
   className="tallSection"
 />
 
-
-          <div className="mobileSpacer" style={{ height: '20px' }}></div>
           <AboutStepper/>
           <BlogsServer />
           <div ref={contactRef}>
             <ContactForm />
           </div>
-          <div style={{marginTop: '120px'}}>
+
           <Footer/>
-          </div>
         </AOSClientWrapper>
       </div>
     </>
