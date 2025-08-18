@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from '@/styles/about/AboutHero.module.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -100,7 +101,9 @@ const AboutHero = () => {
           </ul>
           <div className={`animate ${styles.buttonGroup}`}>
             <button className={styles.primaryBtn}>Explore Services</button>
-            <button className={styles.outlineBtn}>Contact Us</button>
+            <Link href="/contact">
+              <button className={styles.outlineBtn}>Contact Us</button>
+            </Link>
           </div>
           <div className={`animate ${styles.trustedBy}`}>
             <div className={styles.logos}>

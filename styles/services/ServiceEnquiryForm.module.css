@@ -1,0 +1,127 @@
+.section {
+  background: #fafbfc;
+  padding: 100px 20px;
+}
+
+.grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ---------- left form ---------- */
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: clamp(1.9rem, 3vw + 1rem, 2.5rem);
+  font-weight: 700;
+  color: #0d81ac;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin-bottom: 36px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: #0d81ac;
+  box-shadow: 0 0 0 3px #0d81ac22;
+}
+
+.btn {
+  background: #0d81ac;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.btn:hover:not(:disabled) {
+  background: #0a6a8e;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.success {
+  margin-top: 8px;
+  color: #065f46;
+  font-weight: 500;
+}
+
+/* ---------- right illustration ---------- */
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroSvg {
+  width: 100%;
+  height: auto;
+  max-width: 420px;
+  filter: drop-shadow(0 8px 24px rgba(13, 129, 172, 0.12));
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .right {
+    order: -1;
+  }
+}

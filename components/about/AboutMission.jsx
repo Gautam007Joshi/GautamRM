@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import styles from '@/styles/about/AboutMission.module.css';
 import { gsap } from 'gsap';
+import Link from "next/link";
 
 const OurMission = () => {
   const sectionRef = useRef(null);
@@ -60,9 +61,11 @@ const OurMission = () => {
               </div>
             </div>
 
-            <button className={styles.glassBtn}>
-              <span>Explore Our Approach</span>
-            </button>
+            <Link href="/start-campaign">
+              <button className={styles.glassBtn}>
+                <span>Lets Work Together</span>
+              </button>
+            </Link>
           </div>
         </div>
       </div>

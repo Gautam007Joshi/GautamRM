@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { serviceData } from '../data/index.js';
 import { shouldShowSplash, markSplashShown } from '@/lib/splashFlag.js';
+import SplitServiceForm from '@/components/services/ServiceFormSection.jsx';
 
 const Navbar              = dynamic(() => import('@/components/sections/Navbar'));
-const ContactForm         = dynamic(() => import('@/components/sections/ContactForm'));
 const Footer              = dynamic(() => import('@/components/sections/Footer'));
 const ServiceHero         = dynamic(() => import('@/components/services/ServiceHero'));
 const StatsSection        = dynamic(() => import('@/components/services/ServiceStats'));
@@ -85,7 +85,7 @@ export default function ServicePageClient({ slug }) {
             <ServiceHowWeWork steps={data.howWeWork} />
             {data.pricingPlans && <ServicePricingPlans plans={data.pricingPlans} />}
             {data.faqs && <ServiceFAQ faqs={data.faqs} />}
-            <ContactForm />
+            <SplitServiceForm slug={slug}/>
             <Footer />
           </>
         )}
