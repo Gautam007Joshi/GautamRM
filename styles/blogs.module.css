@@ -7,7 +7,6 @@
 /* 🌐 Section Styling */
 .blogSection {
   padding: 6rem 3rem;
-  background: #f9f9f9;
   text-align: center;
 
 }
@@ -161,6 +160,10 @@
 }
 
 @media (max-width: 768px) {
+
+  .blogSection{
+    margin-top: -100px !important;
+  }
   
   .carouselWrapper {
     position: relative;
@@ -252,7 +255,7 @@
 
 @media (max-width: 768px){
   .homeblogsection{
-    height: 100vh !important;  /* adapts to content */
+    height: 120vh !important;  /* adapts to content */
     padding-bottom: 1rem; /* gives breathing space instead of vh */
   }
 }

@@ -1,5 +1,7 @@
 .homecontactform{
   margin-top: -280px;
+  min-height: 100vh;
+  height: auto;
 }
 
 /* 🌐 Background Section */

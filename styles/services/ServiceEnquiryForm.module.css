@@ -3,6 +3,7 @@
   padding: 100px 20px;
 }
 
+
 .grid {
   max-width: 1180px;
   margin: 0 auto;
@@ -36,6 +37,7 @@
   display: flex;
   flex-direction: column;
   gap: 26px;
+  margin-bottom: 60px; /* ✅ ensures clear space before footer */
 }
 
 .cols {
@@ -84,6 +86,7 @@
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.25s;
+  width: 100%; /* ✅ full width on small screens */
 }
 
 .btn:hover:not(:disabled) {
@@ -111,17 +114,62 @@
 .heroSvg {
   width: 100%;
   height: auto;
-  max-width: 420px;
+  max-width: 520px;
   filter: drop-shadow(0 8px 24px rgba(13, 129, 172, 0.12));
 }
 
 /* ---------- responsive ---------- */
+@media (max-width: 1200px) {
+  .grid {
+    gap: 60px;
+  }
+}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+    .right {
+    display: none; /* hide image completely */
+  }
+
+  .section {
+    padding: 60px 16px 100px; /* ✅ extra bottom padding */
+  }
+}
+
+@media (max-width: 600px) {
+
+   .grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .cols {
+    grid-template-columns: 1fr; /* stack inputs */
+    gap: 20px;
+  }
+
   .right {
-    order: -1;
+    display: none; /* hide image completely */
+  }
+
+  .section {
+    padding: 60px 16px;
+    margin-bottom: 180px; /* ✅ safe padding but no overlap */
+  }
+
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .sub {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  .btn {
+    width: 100%;
   }
 }

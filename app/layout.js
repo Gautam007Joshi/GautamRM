@@ -3,6 +3,7 @@ import '@/styles/global.css';                   // ✅ global styles only
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import SmoothScrollWrapper from '@/components/utils/SmoothScrollWrapper';
 import Chatbot from '@/components/chatbot/Chatbot';
+import Footer from '@/components/sections/Footer';
 
 export const metadata = {
   title: 'Digital Marketing Agency',
@@ -14,7 +15,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <SmoothScrollWrapper>{children}</SmoothScrollWrapper>
-        <Chatbot />           {/* ✅ always mounted */}
+        <Chatbot />  
+        <Footer/>         {/* ✅ always mounted */}
       </body>
     </html>
   );

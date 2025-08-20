@@ -56,11 +56,5 @@ body.no-scroll {
 }
 
 
-/* Laptop screens only (1024px - 1440px) */
-@media (min-width: 1024px) and (max-width: 1440px) {
-  .footerLaptopMargin {
-    margin-top: 220px;
-  }
-}
 
 

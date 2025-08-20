@@ -75,8 +75,6 @@ export default function Home() {
           <div ref={contactRef}>
             <ContactForm />
           </div>
-
-          <Footer/>
         </AOSClientWrapper>
       </div>
     </>
