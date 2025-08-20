@@ -86,7 +86,7 @@ export default function ServicePageClient({ slug }) {
             {data.pricingPlans && <ServicePricingPlans plans={data.pricingPlans} />}
             {data.faqs && <ServiceFAQ faqs={data.faqs} />}
             <SplitServiceForm slug={slug}/>
-            <Footer />
+
           </>
         )}
       </div>

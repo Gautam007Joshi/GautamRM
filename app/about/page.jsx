@@ -60,7 +60,6 @@ const About = () => {
         <Testimonials />
         <CtaSection />
         <div style={{ height: '180px' }} />
-        <Footer />
       </div>
     </>
   );
